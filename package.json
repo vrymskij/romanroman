@@ -1,0 +1,7 @@
+{
+  "name": "romanroman-poetry-site",
+  "private": true,
+  "scripts": {
+    "build": "node build.mjs"
+  }
+}

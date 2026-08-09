@@ -3,55 +3,27 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Назва четвертого вірша — Авторський простір В. Романа-Римського</title>
+<meta name="description" content="Назва четвертого вірша — В. Роман-Римський">
+<title>Назва четвертого вірша — В. Роман-Римський</title>
 <link rel="stylesheet" href="../style.css">
 </head>
-<body>
+<body class="poem-page">
 <header>
   <a class="logo" href="../index.html">ПОЕЗІЯ ТА ЕСЕ</a>
-  <nav class="poem-nav"><a href="../index.html#poems">← Всі вірші</a></nav>
+  <nav><a href="../poems.html">Усі вірші</a><a href="../index.html#about">Про автора</a><a href="../index.html#contact">Контакти</a></nav>
 </header>
+<main class="poem-shell">
+  <a class="back-link" href="../poems.html">← Усі вірші</a>
+  <article class="poem-article">
+    <p class="poem-author">В. Роман-Римський</p>
+    <h1>Назва четвертого вірша</h1>
+    <div class="topics"><span>тема</span></div>
+    <pre class="poem-text">Тут буде текст вірша.
 
-<main class="poem-page" data-audio-src="">
-  <p class="kicker">Вірш 04</p>
-  <h1>Назва четвертого вірша</h1>
-
-  <div class="topics poem-topics"><span>людина</span><span>самотність</span><span>надія</span></div>
-
-  <!-- Optional audio:
-       leave data-audio-src="" blank for no audio.
-       To add audio, use for example:
-       data-audio-src="../audio/01.mp3"
-  -->
-  <div class="poem-audio-slot" aria-live="polite"></div>
-
-  <article class="poem-text">
-    <p>Тут буде текст вірша.<br>
-    Замініть цей текст власними рядками.<br><br>
-    Кожен вірш має окрему сторінку<br>
-    і власне посилання для поширення.</p>
+Другий рядок вірша.</pre>
+    
   </article>
-
-  <p class="poem-back"><a class="text-link" href="../index.html#poems">← Всі вірші</a></p>
 </main>
-
-<script>
-const page = document.querySelector('.poem-page');
-const src = page.dataset.audioSrc.trim();
-if (src) {
-  const slot = page.querySelector('.poem-audio-slot');
-  const player = document.createElement('audio');
-  player.controls = true;
-  player.preload = 'none';
-  player.setAttribute('controlsList', 'nodownload noplaybackrate');
-  player.setAttribute('disableRemotePlayback', '');
-  const source = document.createElement('source');
-  source.src = src;
-  source.type = 'audio/mpeg';
-  player.appendChild(source);
-  slot.appendChild(player);
-  slot.classList.add('has-audio');
-}
-</script>
-</body>
-</html>
+<footer class="site-footer"><span>© <span id="year"></span> · Усі тексти та аудіоматеріали захищені авторським правом. Використання та публікація можливі лише з дозволу автора.</span><a href="../index.html">На головну ↑</a></footer>
+<script>document.getElementById("year").textContent=new Date().getFullYear()</script>
+</body></html>

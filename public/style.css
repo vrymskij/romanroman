@@ -738,3 +738,28 @@ header{
   #poems .topics{grid-column:1;margin-top:8px}
   #poems .poems b{grid-column:2;grid-row:1 / span 2}
 }
+
+
+/* ===== Poetry publishing system ===== */
+.all-poems-link{margin-top:24px;text-align:right}
+.archive-shell{max-width:1120px;margin:0 auto;padding:110px 6vw 100px}
+.archive-shell>h1{font:400 clamp(54px,8vw,100px)/.9 "Cormorant Garamond",Georgia,serif;margin:10px 0 18px}
+.archive-intro{max-width:520px;margin:0 0 52px;opacity:.72}
+.archive-poems{display:block;border-top:1px solid rgba(23,23,20,.24)}
+.archive-poems>a{display:grid;grid-template-columns:1fr 24px;gap:24px;align-items:center;padding:23px 3px;border-bottom:1px solid rgba(23,23,20,.18);text-decoration:none;color:inherit}
+.archive-poems>a:hover{padding-left:9px}
+.archive-poems h3{font:400 29px/1.05 "Cormorant Garamond",Georgia,serif;margin:0 0 8px}
+.archive-poems b{justify-self:end}
+.poem-shell{max-width:850px;margin:0 auto;padding:110px 6vw 100px}
+.back-link{display:inline-block;margin-bottom:56px;color:inherit;text-decoration:none;opacity:.7}
+.poem-article{max-width:680px}
+.poem-author,.poem-article>.topics{margin-bottom:18px}
+.poem-article h1{font:400 clamp(48px,7vw,82px)/.95 "Cormorant Garamond",Georgia,serif;margin:0 0 18px}
+.poem-text{font:400 20px/1.75 Georgia,"Times New Roman",serif;white-space:pre-wrap;margin:46px 0 0;background:none;border:0;padding:0;color:inherit}
+.poem-audio{margin-top:54px;padding-top:24px;border-top:1px solid rgba(23,23,20,.18)}
+.poem-audio audio{width:min(100%,520px)}
+@media(max-width:760px){
+  .archive-shell,.poem-shell{padding-top:82px}
+  .archive-poems h3{font-size:25px}
+  .poem-text{font-size:18px;line-height:1.7}
+}
