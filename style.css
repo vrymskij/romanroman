@@ -34,3 +34,33 @@ footer{padding:22px 5vw;display:flex;justify-content:space-between;border-top:1p
   .hero-kicker .author-inline{font-size:10px;margin-top:2px}
   .landscape{margin-left:-3vw;margin-right:-3vw}
 }
+
+
+/* Topics */
+.topics{display:flex;flex-wrap:wrap;gap:7px;margin-top:9px}
+.topics span{display:inline-flex;align-items:center;border:1px solid rgba(123,89,71,.35);border-radius:999px;padding:4px 8px;font:500 9px/1 Manrope,sans-serif;letter-spacing:.06em;text-transform:lowercase;color:var(--accent);background:rgba(255,255,255,.12)}
+.poems .topics span{font-size:8px}
+.poems>a>div{min-width:0}
+
+/* Individual poem pages */
+.poem-page{max-width:760px;margin:auto;padding:12vh 7vw;min-height:85vh}
+.poem-page h1{font:400 clamp(52px,8vw,90px)/.95 'Cormorant Garamond',serif;letter-spacing:-.03em;margin:18px 0 0}
+.poem-topics{margin-top:22px}
+.poem-audio-slot{margin-top:0}
+.poem-audio-slot.has-audio{margin-top:28px;padding-top:20px;border-top:1px solid #c5beb2}
+.poem-audio-slot audio{width:min(100%,420px);height:36px}
+.poem-text{font:400 22px/1.65 'Cormorant Garamond',serif;margin-top:55px}
+.poem-back{margin-top:65px}
+.poem-nav{display:flex!important}
+
+@media(max-width:760px){
+  .poems>a{grid-template-columns:32px 1fr 20px;gap:12px}
+  .poems h3{font-size:25px}
+  .poems p{font-size:16px}
+  .topics{gap:6px}
+  .topics span{padding:4px 7px}
+  .poem-page{padding:10vh 7vw}
+  .poem-text{font-size:21px;margin-top:45px}
+  header .poem-nav{position:static!important;display:flex!important;background:none!important;border:0!important;padding:0!important;grid-template-columns:none!important;width:auto!important}
+  header .poem-nav a{border:0!important;min-height:auto!important}
+}

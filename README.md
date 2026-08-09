@@ -18,3 +18,16 @@ Upload the contents to a GitHub repository, then enable Pages in repository Sett
 
 ## August 2026 refinements
 Hero illustration refined; section numbering removed; audio download/playback-rate options disabled in native controls; copyright notice added.
+
+
+## Optional audio on individual poem pages
+Each poem page contains `data-audio-src=""` on the `<main class="poem-page">` element.
+
+- No audio: leave `data-audio-src=""`
+- With audio: set e.g. `data-audio-src="../audio/01.mp3"`
+
+The audio player appears automatically only when a path is supplied.
+
+## Topics
+Each poem currently has 2–3 placeholder topic tags on the landing page and on its individual page.
+Replace them with the actual themes of the poem in both locations when you add the real text.
