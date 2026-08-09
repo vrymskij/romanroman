@@ -1,6 +1,6 @@
 document.getElementById('year').textContent=new Date().getFullYear();
 const menu=document.querySelector('.menu'),nav=document.querySelector('nav');
-menu.addEventListener('click',()=>nav.style.display=nav.style.display==='flex'?'none':'flex');
+menu.addEventListener('click',()=>nav.style.display=nav.style.display==='grid'?'none':'grid');
 
 const like=document.getElementById('likeBook'), count=document.getElementById('likeCount');
 let liked=localStorage.getItem('bookLiked')==='1';

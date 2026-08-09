@@ -15,3 +15,22 @@ footer{padding:22px 5vw;display:flex;justify-content:space-between;border-top:1p
 .site-footer{gap:28px;align-items:center;text-transform:none;letter-spacing:.04em;line-height:1.5}
 .site-footer>span{max-width:900px}
 @media(max-width:760px){.site-footer{align-items:flex-start;gap:20px}.site-footer>span{display:block!important}}
+
+/* 2026-08-09 author / navigation refinement */
+.hero-kicker{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.hero-kicker .author-inline{color:var(--ink);letter-spacing:.08em;text-transform:none;font-weight:500}
+.hero-kicker .author-inline:before{content:"·";margin-right:12px;color:#9b948a}
+.author-name{font:500 15px Manrope,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#e9e5dc!important;margin:0 0 24px}
+
+@media(max-width:760px){
+  header{height:64px;padding:0 7vw;position:sticky}
+  .logo{max-width:72%;line-height:1.25;letter-spacing:.18em}
+  .menu{display:block;padding:8px 0 8px 12px;line-height:1}
+  header nav{display:none;position:absolute;top:64px;left:0;right:0;background:rgba(240,237,229,.98);border-top:1px solid #cfc9bd;border-bottom:1px solid #cfc9bd;padding:18px 7vw 20px;grid-template-columns:1fr 1fr;gap:0;z-index:20}
+  header nav a{display:flex;align-items:center;justify-content:flex-start;min-height:42px;border-bottom:1px solid rgba(207,201,189,.65);font-size:10px;letter-spacing:.11em}
+  header nav a:nth-last-child(-n+2){border-bottom:0}
+  .hero-kicker{align-items:flex-start;gap:5px;flex-direction:column}
+  .hero-kicker .author-inline:before{content:"";margin:0}
+  .hero-kicker .author-inline{font-size:10px;margin-top:2px}
+  .landscape{margin-left:-3vw;margin-right:-3vw}
+}
