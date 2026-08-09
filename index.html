@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Авторський простір української поезії та есеїстики.">
+<title>Поезія — авторський простір</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <a class="logo" href="#home">ПОЕЗІЯ</a>
+  <button class="menu" aria-label="Меню">☰</button>
+  <nav>
+    <a href="#poems">Вірші</a><a href="#about">Про автора</a><a href="#book">Книга</a>
+    <a href="#audio">Аудіо</a><a href="#contact">Контакти</a>
+  </nav>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="hero-copy">
+    <p class="kicker">Авторський простір</p>
+    <h1>Вірші.<br><i>Думки.</i><br>Голос.</h1>
+    <p class="intro">Поезія та есеї про людину, пам’ять, дім, суспільство і час.</p>
+    <div class="hero-actions"><a class="btn" href="#poems">Читати вірші</a><a class="text-link" href="#contact">Залишатися на зв’язку →</a></div>
+  </div>
+  <div class="landscape" aria-hidden="true">
+    <svg viewBox="0 0 700 500" role="img">
+      <path d="M0 350 Q120 270 210 320 T390 295 T700 330" />
+      <path d="M40 350 L170 175 L255 300 L365 120 L505 330" />
+      <path d="M260 330 L365 120 L445 250 L500 190 L620 350" />
+      <path d="M0 390 Q170 350 330 390 T700 380" />
+      <path d="M0 425 Q180 390 350 430 T700 420" />
+      <circle cx="525" cy="338" r="9"/><path d="M525 347 L525 390 M525 360 L507 377 M525 360 L541 378 M525 390 L511 420 M525 390 L540 420"/>
+    </svg>
+  </div>
+  <form class="signup hero-signup" data-kind="updates">
+    <label>Нові тексти — зрідка, без зайвого.</label>
+    <div><input type="email" name="email" placeholder="Ваш email" required><button>Підписатися</button></div>
+    <small class="status"></small>
+  </form>
+</section>
+
+<section id="poems" class="section">
+  <div class="section-title"><p>01</p><h2>Вибрані<br><i>вірші</i></h2></div>
+  <div class="poems">
+    <a href="poems/virsh-01.html"><span>01</span><div><h3>Назва першого вірша</h3><p>Короткий рядок або фрагмент вірша може бути тут…</p></div><b>↗</b></a>
+    <a href="poems/virsh-02.html"><span>02</span><div><h3>Назва другого вірша</h3><p>Короткий рядок або фрагмент вірша може бути тут…</p></div><b>↗</b></a>
+    <a href="poems/virsh-03.html"><span>03</span><div><h3>Назва третього вірша</h3><p>Короткий рядок або фрагмент вірша може бути тут…</p></div><b>↗</b></a>
+    <a href="poems/virsh-04.html"><span>04</span><div><h3>Назва четвертого вірша</h3><p>Короткий рядок або фрагмент вірша може бути тут…</p></div><b>↗</b></a>
+    <a href="poems/virsh-05.html"><span>05</span><div><h3>Назва п’ятого вірша</h3><p>Короткий рядок або фрагмент вірша може бути тут…</p></div><b>↗</b></a>
+    <a href="poems/virsh-06.html"><span>06</span><div><h3>Назва шостого вірша</h3><p>Короткий рядок або фрагмент вірша може бути тут…</p></div><b>↗</b></a>
+  </div>
+</section>
+
+<section id="about" class="section dark">
+  <div class="section-title"><p>02</p><h2>Про<br><i>автора</i></h2></div>
+  <div class="prose">
+    <p class="large">Народився на Закарпатті. Поет та есеїст, представник української діаспори.</p>
+    <p>Захоплюється філософією, політологією, соціологією та економікою. У текстах особисті спостереження переплітаються з роздумами про людину, суспільство, пам’ять, свободу, належність і дім.</p>
+    <p>Цей сайт — простір для віршів, есеїв та інших текстів.</p>
+  </div>
+</section>
+
+<section id="book" class="section book">
+  <div class="section-title"><p>03</p><h2>Паперова<br><i>книга?</i></h2></div>
+  <div class="book-copy">
+    <p class="large">Наразі паперова збірка не готується.</p>
+    <p>Мені цікаво зрозуміти, чи була б вона цікава читачам. Якщо ви хотіли б колись мати ці вірші у паперовому форматі, натисніть «Хочу книгу» та залиште email. Це не замовлення і ні до чого вас не зобов’язує — лише допоможе оцінити інтерес.</p>
+    <button class="like" id="likeBook">♡ <span>Хочу книгу</span> <em id="likeCount">0</em></button>
+    <form class="signup" data-kind="book">
+      <div><input type="email" name="email" placeholder="Ваш email" required><button>Залишити email</button></div>
+      <small class="status"></small>
+    </form>
+  </div>
+</section>
+
+<section id="audio" class="section audio">
+  <div class="section-title"><p>04</p><h2>Вибрані<br><i>аудіо</i></h2></div>
+  <div class="audio-list">
+    <div><span>01</span><strong>Назва вірша</strong><audio controls preload="none"><source src="audio/01.mp3" type="audio/mpeg"></audio></div>
+    <div><span>02</span><strong>Назва вірша</strong><audio controls preload="none"><source src="audio/02.mp3" type="audio/mpeg"></audio></div>
+    <div><span>03</span><strong>Назва вірша</strong><audio controls preload="none"><source src="audio/03.mp3" type="audio/mpeg"></audio></div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <p class="kicker">Залишатися на зв’язку</p>
+  <h2>Нові вірші.<br><i>Іноді — листом.</i></h2>
+  <p>Залиште email, якщо хочете дізнаватися про нові тексти, аудіо та можливі майбутні видання.</p>
+  <form class="signup contact-signup" data-kind="updates">
+    <div><input type="email" name="email" placeholder="Ваш email" required><button>Підписатися</button></div>
+    <small class="status"></small>
+  </form>
+  <div class="socials"><a href="#">Instagram ↗</a><a href="#">Telegram ↗</a></div>
+</section>
+</main>
+<footer><span>© <span id="year"></span></span><span>Українська поезія</span><a href="#home">Нагору ↑</a></footer>
+<script src="script.js"></script>
+</body></html>
