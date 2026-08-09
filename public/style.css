@@ -794,3 +794,165 @@ header{
     padding-top:10px;
   }
 }
+
+
+/* ===== 2026-08-10 refinement ===== */
+
+/* "Усі вірші" sits immediately under the selected-poem list. */
+#poems .all-poems-link{
+  margin-top:0!important;
+  transform:translateY(-2px);
+}
+#poems .all-poems-link .text-link{
+  font-size:26px!important;
+  padding-top:6px!important;
+}
+
+/* Audio controls should visually blend into the site's warm background. */
+.audio,
+.poem-audio{
+  background:transparent!important;
+}
+.audio audio,
+.poem-audio audio{
+  background:transparent!important;
+  border:0;
+  box-shadow:none;
+  mix-blend-mode:multiply;
+}
+.audio audio::-webkit-media-controls-panel,
+.poem-audio audio::-webkit-media-controls-panel{
+  background-color:var(--paper);
+}
+
+/* Individual poem pages echo the landing-page composition. */
+.poem-page{
+  background:var(--paper);
+}
+.poem-page header{
+  background:rgba(240,237,229,.96);
+}
+.poem-hero{
+  position:relative;
+  min-height:430px;
+  overflow:hidden;
+  padding:74px 7vw 62px;
+  border-bottom:1px solid rgba(24,24,22,.12);
+  display:flex;
+  align-items:flex-end;
+}
+.poem-hero-art{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  overflow:hidden;
+}
+.poem-hero-art img{
+  position:absolute;
+  right:-2vw;
+  bottom:-8%;
+  width:72vw;
+  height:105%;
+  object-fit:cover;
+  object-position:right bottom;
+  opacity:.48;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.08) 22%,rgba(0,0,0,.52) 45%,#000 65%,#000 100%);
+  mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.08) 22%,rgba(0,0,0,.52) 45%,#000 65%,#000 100%);
+}
+.poem-hero-copy{
+  position:relative;
+  z-index:2;
+  width:min(680px,62vw);
+}
+.poem-page .back-link{
+  display:inline-block;
+  margin:0 0 40px;
+  font-size:13px;
+  letter-spacing:.04em;
+  opacity:.68;
+}
+.poem-author{
+  margin:0 0 8px;
+  font:500 12px/1.2 Manrope,sans-serif;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--accent);
+}
+.poem-date{
+  display:inline-block;
+  margin:0 0 20px;
+  padding:4px 9px;
+  border:1px solid rgba(24,24,22,.14);
+  border-radius:999px;
+  font:500 10px/1 Manrope,sans-serif;
+  letter-spacing:.07em;
+  color:#5e5851;
+}
+.poem-hero h1{
+  margin:0 0 20px;
+  font:400 clamp(58px,8vw,106px)/.88 "Cormorant Garamond",Georgia,serif;
+  letter-spacing:-.04em;
+}
+.poem-hero .topics{
+  margin-top:14px;
+}
+.poem-content{
+  padding:72px 7vw 100px;
+}
+.poem-content .poem-article{
+  max-width:860px;
+  margin:0 auto;
+}
+.poem-content .poem-text{
+  max-width:760px;
+  margin:0;
+  font:400 22px/1.8 Georgia,"Times New Roman",serif;
+  white-space:pre-wrap;
+  background:transparent;
+  border:0;
+  color:var(--ink);
+  padding:0;
+}
+.poem-audio{
+  max-width:760px;
+  margin-top:64px;
+  padding-top:24px;
+  border-top:1px solid rgba(24,24,22,.15);
+}
+
+@media(max-width:760px){
+  #poems .all-poems-link .text-link{
+    font-size:23px!important;
+  }
+  .poem-hero{
+    min-height:500px;
+    padding:52px 6vw 48px;
+    align-items:flex-start;
+  }
+  .poem-hero-copy{
+    width:100%;
+  }
+  .poem-hero-art img{
+    width:145vw;
+    height:58%;
+    right:-40vw;
+    bottom:-3%;
+    opacity:.34;
+    -webkit-mask-image:linear-gradient(180deg,transparent 0%,rgba(0,0,0,.3) 25%,#000 55%,#000 100%);
+    mask-image:linear-gradient(180deg,transparent 0%,rgba(0,0,0,.3) 25%,#000 55%,#000 100%);
+  }
+  .poem-page .back-link{
+    margin-bottom:34px;
+  }
+  .poem-hero h1{
+    font-size:clamp(52px,16vw,78px);
+    max-width:92%;
+  }
+  .poem-content{
+    padding:54px 7vw 80px;
+  }
+  .poem-content .poem-text{
+    font-size:19px;
+    line-height:1.75;
+  }
+}

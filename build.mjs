@@ -60,6 +60,8 @@ function poemPage(p) {
   const audio = p.audio
     ? `<section class="poem-audio"><p class="kicker">Аудіо</p><audio controls controlsList="nodownload noplaybackrate" disableRemotePlayback preload="none"><source src="../audio/${esc(p.audio)}" type="audio/mpeg"></audio></section>`
     : "";
+  const displayDate = p.date || p.year || "";
+  const dateHtml = displayDate ? `<p class="poem-date">${esc(displayDate)}</p>` : "";
   return `<!doctype html>
 <html lang="uk">
 <head>
@@ -72,20 +74,38 @@ function poemPage(p) {
 <body class="poem-page">
 <header>
   <a class="logo" href="../index.html">ПОЕЗІЯ ТА ЕСЕ</a>
-  <nav><a href="../poems.html">Усі вірші</a><a href="../index.html#about">Про автора</a><a href="../index.html#contact">Контакти</a></nav>
+  <button class="menu" aria-label="Меню">☰</button>
+  <nav><a href="../poems.html">Усі вірші</a><a href="../index.html#about">Про автора</a><a href="../index.html#audio">Аудіо</a><a href="../index.html#contact">Контакти</a></nav>
 </header>
-<main class="poem-shell">
-  <a class="back-link" href="../poems.html">← Усі вірші</a>
-  <article class="poem-article">
-    <p class="poem-author">В. Роман-Римський</p>
-    <h1>${esc(p.title)}</h1>
-    <div class="topics">${topicsHtml(p)}</div>
-    <pre class="poem-text">${esc(p.body)}</pre>
-    ${audio}
-  </article>
+
+<main>
+  <section class="poem-hero">
+    <div class="poem-hero-art" aria-hidden="true">
+      <img src="../assets/mountains-line-transparent.png" alt="">
+    </div>
+    <div class="poem-hero-copy">
+      <a class="back-link" href="../poems.html">← Усі вірші</a>
+      <p class="poem-author">В. Роман-Римський</p>
+      ${dateHtml}
+      <h1>${esc(p.title)}</h1>
+      <div class="topics">${topicsHtml(p)}</div>
+    </div>
+  </section>
+
+  <section class="poem-content">
+    <article class="poem-article">
+      <pre class="poem-text">${esc(p.body)}</pre>
+      ${audio}
+    </article>
+  </section>
 </main>
+
 <footer class="site-footer"><span>© <span id="year"></span> · Усі тексти та аудіоматеріали захищені авторським правом. Використання та публікація можливі лише з дозволу автора.</span><a href="../index.html">На головну ↑</a></footer>
-<script>document.getElementById("year").textContent=new Date().getFullYear()</script>
+<script>
+document.getElementById("year").textContent=new Date().getFullYear();
+const menu=document.querySelector(".menu"),nav=document.querySelector("nav");
+if(menu&&nav) menu.addEventListener("click",()=>{nav.style.display=nav.style.display==="grid"?"none":"grid"});
+</script>
 </body></html>`;
 }
 
