@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Назва шостого вірша — Авторський простір В. Романа-Римського</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header>
+  <a class="logo" href="../index.html">ПОЕЗІЯ ТА ЕСЕ</a>
+  <nav class="poem-nav"><a href="../index.html#poems">← Всі вірші</a></nav>
+</header>
+
+<main class="poem-page" data-audio-src="">
+  <p class="kicker">Вірш 06</p>
+  <h1>Назва шостого вірша</h1>
+
+  <div class="topics poem-topics"><span>час</span><span>дорога</span><span>повернення</span></div>
+
+  <!-- Optional audio:
+       leave data-audio-src="" blank for no audio.
+       To add audio, use for example:
+       data-audio-src="../audio/01.mp3"
+  -->
+  <div class="poem-audio-slot" aria-live="polite"></div>
+
+  <article class="poem-text">
+    <p>Тут буде текст вірша.<br>
+    Замініть цей текст власними рядками.<br><br>
+    Кожен вірш має окрему сторінку<br>
+    і власне посилання для поширення.</p>
+  </article>
+
+  <p class="poem-back"><a class="text-link" href="../index.html#poems">← Всі вірші</a></p>
+</main>
+
+<script>
+const page = document.querySelector('.poem-page');
+const src = page.dataset.audioSrc.trim();
+if (src) {
+  const slot = page.querySelector('.poem-audio-slot');
+  const player = document.createElement('audio');
+  player.controls = true;
+  player.preload = 'none';
+  player.setAttribute('controlsList', 'nodownload noplaybackrate');
+  player.setAttribute('disableRemotePlayback', '');
+  const source = document.createElement('source');
+  source.src = src;
+  source.type = 'audio/mpeg';
+  player.appendChild(source);
+  slot.appendChild(player);
+  slot.classList.add('has-audio');
+}
+</script>
+</body>
+</html>

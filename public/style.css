@@ -1,0 +1,694 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Manrope:wght@400;500;600&display=swap');
+:root{--paper:#f0ede5;--ink:#181816;--soft:#cbc5b9;--accent:#7b5947}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Manrope,sans-serif;line-height:1.6}a{color:inherit;text-decoration:none}
+header{height:72px;padding:0 5vw;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #cfc9bd;position:sticky;top:0;background:rgba(240,237,229,.94);backdrop-filter:blur(8px);z-index:10}.logo{font-size:11px;letter-spacing:.24em;font-weight:600}nav{display:flex;gap:28px;font-size:10px;text-transform:uppercase;letter-spacing:.13em}.menu{display:none;border:0;background:none;font-size:22px}
+.hero{min-height:calc(100vh - 72px);padding:8vw 8vw 5vw;display:grid;grid-template-columns:1fr .8fr;position:relative;overflow:hidden}.kicker,.section-title>p{font-size:10px;text-transform:uppercase;letter-spacing:.22em;color:#716b62}.hero h1,.section h2,.contact h2{font:400 clamp(62px,9vw,132px)/.78 'Cormorant Garamond',serif;letter-spacing:-.045em;margin:24px 0 32px}.hero h1 i,.section h2 i,.contact h2 i{font-weight:400;color:var(--accent)}.intro{max-width:480px;color:#5f5a53}.hero-actions{display:flex;align-items:center;gap:25px;margin-top:35px}.btn,.signup button{border:1px solid var(--ink);background:var(--ink);color:var(--paper);padding:13px 18px;font:600 10px Manrope;text-transform:uppercase;letter-spacing:.1em;cursor:pointer}.text-link{font-size:11px}.landscape{align-self:center}.landscape svg{width:100%;fill:none;stroke:#5c5750;stroke-width:1.2}.landscape circle{fill:#5c5750}.hero-signup{grid-column:1/-1;margin-top:7vw;max-width:570px}.signup label{display:block;font-size:11px;margin-bottom:10px}.signup>div{display:flex}.signup input{min-width:0;flex:1;padding:13px 14px;border:1px solid #bdb7ac;background:transparent;font:13px Manrope}.status{display:block;min-height:20px;margin-top:8px;color:var(--accent)}
+.section{padding:110px 8vw;border-top:1px solid #cbc5b9;display:grid;grid-template-columns:.7fr 1.3fr;gap:8vw}.section h2{font-size:clamp(55px,7vw,95px);margin:10px 0}.poems{border-top:1px solid #bdb7ac}.poems>a{display:grid;grid-template-columns:45px 1fr 30px;gap:20px;padding:24px 4px;border-bottom:1px solid #bdb7ac;align-items:center;transition:.2s}.poems>a:hover{padding-left:14px;background:rgba(255,255,255,.22)}.poems span{font-size:9px;color:var(--accent)}.poems h3{font:400 28px 'Cormorant Garamond';margin:0}.poems p{font:17px 'Cormorant Garamond';color:#6b655d;margin:4px 0 0}.poems b{font-weight:400}
+.dark{background:#1d1c19;color:#e9e5dc;border-color:#1d1c19}.dark .section-title>p{color:#8c877f}.prose{max-width:670px}.prose p{color:#aaa49a}.prose .large,.large{font:400 32px/1.25 'Cormorant Garamond';color:inherit}.book-copy{max-width:690px}.book-copy>p:not(.large){color:#645f57}.like{margin:25px 0 15px;padding:12px 16px;border:1px solid #a9a297;background:transparent;font:500 11px Manrope;letter-spacing:.06em;cursor:pointer}.like.liked{background:var(--ink);color:var(--paper)}.like em{font-style:normal;margin-left:12px}.audio{background:#e7e2d8}.audio-list{border-top:1px solid #b8b1a6}.audio-list>div{display:grid;grid-template-columns:40px 1fr minmax(240px,380px);align-items:center;gap:20px;border-bottom:1px solid #b8b1a6;padding:22px 0}.audio-list span{font-size:9px;color:var(--accent)}.audio-list strong{font:400 25px 'Cormorant Garamond'}audio{width:100%;height:36px}
+.contact{background:#1d1c19;color:#eee9df;padding:120px 8vw;text-align:center}.contact .kicker{color:#918a80}.contact h2{font-size:clamp(58px,8vw,110px);margin:25px 0 35px}.contact>p:not(.kicker){max-width:590px;margin:0 auto;color:#aaa49a}.contact-signup{max-width:590px;margin:35px auto 0}.contact-signup input{color:#eee9df;border-color:#5c5851}.contact-signup button{background:#eee9df;color:#1d1c19;border-color:#eee9df}.socials{display:flex;justify-content:center;gap:28px;margin-top:45px;font-size:11px;text-transform:uppercase;letter-spacing:.1em}
+footer{padding:22px 5vw;display:flex;justify-content:space-between;border-top:1px solid #c9c3b8;font-size:10px;color:#746e65;text-transform:uppercase;letter-spacing:.12em}
+@media(max-width:760px){nav{display:none}.menu{display:block}.hero{grid-template-columns:1fr;padding:18vw 7vw 12vw}.landscape{margin-top:35px}.hero-signup{margin-top:55px}.section{grid-template-columns:1fr;padding:80px 7vw;gap:40px}.audio-list>div{grid-template-columns:35px 1fr}.audio-list audio{grid-column:2}.signup>div{flex-direction:column}.signup button{width:100%}.hero-actions{align-items:flex-start;flex-direction:column}.contact{padding:90px 7vw}footer span:nth-child(2){display:none}}
+
+/* 2026-08 refinement */
+.landscape svg{stroke-width:1.05;stroke-linecap:round;stroke-linejoin:round}
+.section-title h2{margin-top:0}
+.site-footer{gap:28px;align-items:center;text-transform:none;letter-spacing:.04em;line-height:1.5}
+.site-footer>span{max-width:900px}
+@media(max-width:760px){.site-footer{align-items:flex-start;gap:20px}.site-footer>span{display:block!important}}
+
+/* 2026-08-09 author / navigation refinement */
+.hero-kicker{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.hero-kicker .author-inline{color:var(--ink);letter-spacing:.08em;text-transform:none;font-weight:500}
+.hero-kicker .author-inline:before{content:"·";margin-right:12px;color:#9b948a}
+.author-name{font:500 15px Manrope,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#e9e5dc!important;margin:0 0 24px}
+
+@media(max-width:760px){
+  header{height:64px;padding:0 7vw;position:sticky}
+  .logo{max-width:72%;line-height:1.25;letter-spacing:.18em}
+  .menu{display:block;padding:8px 0 8px 12px;line-height:1}
+  header nav{display:none;position:absolute;top:64px;left:0;right:0;background:rgba(240,237,229,.98);border-top:1px solid #cfc9bd;border-bottom:1px solid #cfc9bd;padding:18px 7vw 20px;grid-template-columns:1fr 1fr;gap:0;z-index:20}
+  header nav a{display:flex;align-items:center;justify-content:flex-start;min-height:42px;border-bottom:1px solid rgba(207,201,189,.65);font-size:10px;letter-spacing:.11em}
+  header nav a:nth-last-child(-n+2){border-bottom:0}
+  .hero-kicker{align-items:flex-start;gap:5px;flex-direction:column}
+  .hero-kicker .author-inline:before{content:"";margin:0}
+  .hero-kicker .author-inline{font-size:10px;margin-top:2px}
+  .landscape{margin-left:-3vw;margin-right:-3vw}
+}
+
+
+/* Topics */
+.topics{display:flex;flex-wrap:wrap;gap:7px;margin-top:9px}
+.topics span{display:inline-flex;align-items:center;border:1px solid rgba(123,89,71,.35);border-radius:999px;padding:4px 8px;font:500 9px/1 Manrope,sans-serif;letter-spacing:.06em;text-transform:lowercase;color:var(--accent);background:rgba(255,255,255,.12)}
+.poems .topics span{font-size:8px}
+.poems>a>div{min-width:0}
+
+/* Individual poem pages */
+.poem-page{max-width:760px;margin:auto;padding:12vh 7vw;min-height:85vh}
+.poem-page h1{font:400 clamp(52px,8vw,90px)/.95 'Cormorant Garamond',serif;letter-spacing:-.03em;margin:18px 0 0}
+.poem-topics{margin-top:22px}
+.poem-audio-slot{margin-top:0}
+.poem-audio-slot.has-audio{margin-top:28px;padding-top:20px;border-top:1px solid #c5beb2}
+.poem-audio-slot audio{width:min(100%,420px);height:36px}
+.poem-text{font:400 22px/1.65 'Cormorant Garamond',serif;margin-top:55px}
+.poem-back{margin-top:65px}
+.poem-nav{display:flex!important}
+
+@media(max-width:760px){
+  .poems>a{grid-template-columns:32px 1fr 20px;gap:12px}
+  .poems h3{font-size:25px}
+  .poems p{font-size:16px}
+  .topics{gap:6px}
+  .topics span{padding:4px 7px}
+  .poem-page{padding:10vh 7vw}
+  .poem-text{font-size:21px;margin-top:45px}
+  header .poem-nav{position:static!important;display:flex!important;background:none!important;border:0!important;padding:0!important;grid-template-columns:none!important;width:auto!important}
+  header .poem-nav a{border:0!important;min-height:auto!important}
+}
+
+/* Hero illustration image */
+.landscape{align-self:center;display:flex;align-items:center;justify-content:center}
+.landscape img{
+  display:block;
+  width:100%;
+  height:auto;
+  max-width:780px;
+  object-fit:contain;
+  mix-blend-mode:multiply;
+}
+@media(max-width:760px){
+  .landscape{margin-top:34px}
+  .landscape img{max-width:100%}
+}
+
+/* Corrected hero artwork: illustration only, no embedded page text */
+.landscape{
+  align-self:end;
+  display:flex;
+  align-items:flex-end;
+  justify-content:flex-end;
+  overflow:visible;
+}
+.landscape img{
+  display:block;
+  width:min(100%,760px);
+  height:auto;
+  object-fit:contain;
+  object-position:center bottom;
+  mix-blend-mode:multiply;
+}
+@media(max-width:760px){
+  .landscape{
+    margin-top:34px;
+    justify-content:center;
+  }
+  .landscape img{
+    width:100%;
+    max-width:680px;
+  }
+}
+
+
+/* ===== Editorial hero inspired by approved mountain reference ===== */
+:root{
+  --paper:#f3efe6;
+  --ink:#171714;
+  --soft:#d7d1c5;
+  --accent:#8d674e;
+}
+body{background:var(--paper)}
+header{
+  height:70px;
+  padding:0 3.8vw;
+  background:rgba(243,239,230,.96);
+  border-bottom:0;
+}
+.logo{
+  font-family:"Cormorant Garamond",Georgia,serif;
+  font-size:16px;
+  letter-spacing:.01em;
+  font-weight:500;
+}
+nav{
+  gap:34px;
+  font-family:"Cormorant Garamond",Georgia,serif;
+  font-size:16px;
+  text-transform:none;
+  letter-spacing:0;
+}
+nav a{position:relative}
+nav a:after{
+  content:"";
+  position:absolute;
+  left:0;right:100%;bottom:-3px;
+  height:1px;background:currentColor;
+  transition:right .2s ease;
+}
+nav a:hover:after{right:0}
+
+.editorial-hero{
+  position:relative;
+  min-height:750px;
+  height:calc(100vh - 70px);
+  max-height:920px;
+  padding:0;
+  display:block;
+  overflow:hidden;
+  border-bottom:1px solid rgba(23,23,20,.08);
+}
+.editorial-hero .hero-topline{
+  position:absolute;
+  top:32px;
+  left:5.5vw;
+  z-index:3;
+}
+.hero-author{
+  font:400 16px/1.2 "Cormorant Garamond",Georgia,serif;
+  color:#2a2926;
+  letter-spacing:.01em;
+}
+.hero-author span{margin-left:8px}
+.editorial-hero .hero-copy{
+  position:absolute;
+  z-index:3;
+  left:5.5vw;
+  top:12%;
+  width:31vw;
+  min-width:360px;
+  max-width:500px;
+}
+.editorial-hero h1{
+  font:400 clamp(84px,8.8vw,142px)/.76 "Cormorant Garamond",Georgia,serif;
+  letter-spacing:-.045em;
+  margin:0;
+}
+.editorial-hero h1 i{
+  color:var(--accent);
+  font-weight:400;
+}
+.hero-rule{
+  width:56px;
+  height:1px;
+  background:#605a52;
+  margin:36px 0 30px;
+}
+.editorial-hero .intro{
+  font:400 20px/1.45 "Cormorant Garamond",Georgia,serif;
+  color:#37332f;
+  max-width:420px;
+}
+.editorial-hero .hero-actions{
+  display:flex;
+  align-items:center;
+  gap:34px;
+  margin-top:30px;
+}
+.editorial-hero .btn{
+  padding:14px 27px;
+  font:500 15px/1 Manrope,sans-serif;
+  letter-spacing:.03em;
+  text-transform:none;
+}
+.editorial-hero .text-link{
+  font:400 18px/1.2 "Cormorant Garamond",Georgia,serif;
+  border-bottom:1px solid rgba(23,23,20,.7);
+  padding-bottom:2px;
+}
+.editorial-hero .landscape{
+  position:absolute;
+  z-index:1;
+  right:-1vw;
+  bottom:-1px;
+  width:72vw;
+  height:86%;
+  display:flex;
+  align-items:flex-end;
+  justify-content:flex-end;
+  pointer-events:none;
+  overflow:hidden;
+}
+.editorial-hero .landscape:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(90deg,var(--paper) 0%,rgba(243,239,230,.85) 7%,rgba(243,239,230,0) 22%);
+  z-index:2;
+  pointer-events:none;
+}
+.editorial-hero .landscape img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center bottom;
+  mix-blend-mode:multiply;
+  filter:contrast(.92) sepia(.08);
+}
+
+/* Selected poems directly under the hero */
+#poems.section{
+  display:block;
+  padding:28px 5.5vw 72px;
+  border-top:0;
+}
+#poems .section-title{
+  margin:0 0 18px;
+}
+#poems .section-title h2{
+  font:400 28px/1.1 "Cormorant Garamond",Georgia,serif;
+  letter-spacing:0;
+  margin:0;
+}
+#poems .poems{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  border-top:0;
+}
+#poems .poems>a{
+  position:relative;
+  display:block;
+  min-height:155px;
+  padding:24px 26px 22px;
+  border:1px solid rgba(23,23,20,.09);
+  background:rgba(255,255,255,.12);
+  transition:transform .18s ease,background .18s ease;
+}
+#poems .poems>a:hover{
+  transform:translateY(-2px);
+  background:rgba(255,255,255,.3);
+}
+#poems .poems>a>span{
+  display:block;
+  font:400 13px "Cormorant Garamond",Georgia,serif;
+  color:#332f2b;
+  margin-bottom:10px;
+}
+#poems .poems h3{
+  font:400 24px/1.15 "Cormorant Garamond",Georgia,serif;
+  margin:0 0 14px;
+}
+#poems .poems p{
+  display:none;
+}
+#poems .poems b{
+  position:absolute;
+  right:22px;
+  top:22px;
+  font-size:15px;
+  font-weight:400;
+}
+#poems .topics{
+  margin-top:10px;
+}
+#poems .topics span{
+  border:0;
+  border-radius:3px;
+  background:rgba(23,23,20,.04);
+  color:#5c554e;
+  padding:5px 9px;
+  font-size:10px;
+  letter-spacing:0;
+  text-transform:none;
+}
+
+/* retain remaining sections but align them visually with the new cover */
+.section{padding-left:5.5vw;padding-right:5.5vw}
+.contact{padding-left:5.5vw;padding-right:5.5vw}
+
+@media(max-width:980px){
+  .editorial-hero{
+    min-height:760px;
+    height:auto;
+    padding:70px 6vw 0;
+  }
+  .editorial-hero .hero-topline{
+    position:relative;
+    left:auto;top:auto;
+    margin-bottom:28px;
+  }
+  .editorial-hero .hero-copy{
+    position:relative;
+    left:auto;top:auto;
+    width:auto;min-width:0;max-width:520px;
+    z-index:3;
+  }
+  .editorial-hero h1{
+    font-size:clamp(76px,16vw,112px);
+  }
+  .editorial-hero .landscape{
+    position:relative;
+    right:auto;bottom:auto;
+    width:112%;
+    height:410px;
+    margin-left:-6%;
+    margin-top:10px;
+  }
+  .editorial-hero .landscape:before{
+    background:linear-gradient(180deg,var(--paper) 0%,rgba(243,239,230,.25) 10%,rgba(243,239,230,0) 28%);
+  }
+  #poems .poems{grid-template-columns:1fr 1fr}
+}
+@media(max-width:760px){
+  header{height:64px;padding:0 5vw}
+  .logo{font-size:15px;max-width:70%}
+  nav{
+    position:absolute;
+    top:64px;
+    left:0;right:0;
+    display:none;
+    grid-template-columns:1fr 1fr;
+    gap:0;
+    padding:8px 5vw 14px;
+    background:rgba(243,239,230,.98);
+    border-top:1px solid rgba(23,23,20,.08);
+    border-bottom:1px solid rgba(23,23,20,.08);
+  }
+  nav a{
+    min-height:42px;
+    display:flex;
+    align-items:center;
+    font-size:17px;
+  }
+  .editorial-hero{
+    min-height:0;
+    padding:46px 6vw 0;
+  }
+  .hero-author{
+    font-size:15px;
+  }
+  .hero-author span{
+    display:block;
+    margin:3px 0 0;
+  }
+  .editorial-hero h1{
+    font-size:clamp(72px,23vw,104px);
+    line-height:.78;
+  }
+  .hero-rule{margin:30px 0 24px}
+  .editorial-hero .intro{
+    font-size:19px;
+  }
+  .editorial-hero .hero-actions{
+    gap:24px;
+    flex-direction:row;
+    align-items:center;
+  }
+  .editorial-hero .btn{
+    font-size:13px;
+    padding:13px 20px;
+  }
+  .editorial-hero .text-link{
+    font-size:16px;
+  }
+  .editorial-hero .landscape{
+    width:126%;
+    height:335px;
+    margin-left:-13%;
+    margin-top:18px;
+  }
+  #poems.section{padding:24px 6vw 58px}
+  #poems .poems{grid-template-columns:1fr}
+  #poems .poems>a{min-height:135px}
+}
+
+
+/* ===== Exact user-provided mountain illustration as hero background ===== */
+.editorial-hero{
+  background-color:#f3efe6;
+  background-image:
+    linear-gradient(rgba(243,239,230,.10),rgba(243,239,230,.10)),
+    url("assets/mountains-background.png");
+  background-repeat:no-repeat;
+  background-position:center bottom;
+  background-size:cover;
+}
+
+/* The background already contains its own generous blank area on the left,
+   so the real HTML typography can sit over it. */
+.editorial-hero .hero-copy,
+.editorial-hero .hero-topline{
+  z-index:3;
+}
+.editorial-hero .landscape{display:none!important}
+
+@media(max-width:980px){
+  .editorial-hero{
+    min-height:760px;
+    background-position:58% bottom;
+    background-size:auto 76%;
+  }
+  .editorial-hero:after{
+    content:"";
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    z-index:1;
+    background:linear-gradient(
+      180deg,
+      rgba(243,239,230,.98) 0%,
+      rgba(243,239,230,.90) 35%,
+      rgba(243,239,230,.18) 57%,
+      rgba(243,239,230,0) 72%
+    );
+  }
+  .editorial-hero .hero-copy,
+  .editorial-hero .hero-topline{position:relative;z-index:2}
+}
+
+@media(max-width:760px){
+  .editorial-hero{
+    min-height:760px;
+    background-position:62% bottom;
+    background-size:auto 58%;
+  }
+  .editorial-hero:after{
+    background:linear-gradient(
+      180deg,
+      rgba(243,239,230,1) 0%,
+      rgba(243,239,230,.96) 42%,
+      rgba(243,239,230,.25) 61%,
+      rgba(243,239,230,0) 76%
+    );
+  }
+}
+
+
+/* ===== Template-matched hero using original site palette ===== */
+:root{
+  --paper:#f0ede5;
+  --ink:#181816;
+  --soft:#cbc5b9;
+  --accent:#8d674e;
+}
+
+body{
+  background:var(--paper);
+  color:var(--ink);
+}
+
+header{
+  background:rgba(240,237,229,.96);
+}
+
+.template-hero{
+  position:relative;
+  min-height:760px;
+  height:calc(100vh - 70px);
+  max-height:940px;
+  padding:0;
+  display:block;
+  overflow:hidden;
+  background-color:var(--paper);
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(240,237,229,1) 0%,
+      rgba(240,237,229,.98) 24%,
+      rgba(240,237,229,.88) 36%,
+      rgba(240,237,229,.26) 51%,
+      rgba(240,237,229,.06) 63%,
+      rgba(240,237,229,0) 76%
+    ),
+    url("assets/mountains-background.png");
+  background-repeat:no-repeat;
+  background-position:center bottom;
+  background-size:cover;
+}
+
+.template-hero .hero-topline{
+  position:absolute;
+  top:42px;
+  left:6vw;
+  z-index:3;
+}
+
+.template-hero .hero-author{
+  font:400 18px/1.2 "Cormorant Garamond",Georgia,serif;
+  color:#2b2925;
+  letter-spacing:.01em;
+}
+
+.template-hero .hero-author .divider{
+  display:inline-block;
+  margin:0 12px;
+  color:#6f685f;
+}
+
+.template-hero .hero-copy{
+  position:absolute;
+  left:6vw;
+  top:14%;
+  width:34vw;
+  max-width:520px;
+  min-width:360px;
+  z-index:3;
+}
+
+.template-hero h1{
+  margin:0;
+  font:400 clamp(92px,9.8vw,150px)/.77 "Cormorant Garamond",Georgia,serif;
+  letter-spacing:-.05em;
+}
+
+.template-hero h1 i{
+  color:var(--accent);
+  font-weight:400;
+}
+
+.template-hero .hero-rule{
+  width:58px;
+  height:1px;
+  background:#655e55;
+  margin:38px 0 28px;
+}
+
+.template-hero .intro{
+  max-width:440px;
+  margin:0;
+  font:400 20px/1.45 "Cormorant Garamond",Georgia,serif;
+  color:#49443e;
+}
+
+.template-hero .hero-actions{
+  margin-top:32px;
+  display:flex;
+  align-items:center;
+  gap:34px;
+}
+
+.template-hero .btn{
+  padding:15px 25px;
+  background:var(--ink);
+  color:var(--paper);
+  border-color:var(--ink);
+  font-size:13px;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+}
+
+.template-hero .text-link{
+  font:400 17px/1.2 "Cormorant Garamond",Georgia,serif;
+  border-bottom:1px solid rgba(24,24,22,.55);
+  padding-bottom:2px;
+}
+
+/* Give the mountain more breathing room like the reference */
+@media(min-width:1180px){
+  .template-hero{
+    background-position:54% bottom;
+    background-size:cover;
+  }
+}
+
+/* Tablet */
+@media(max-width:980px){
+  .template-hero{
+    min-height:780px;
+    height:auto;
+    padding:62px 6vw 0;
+    background-position:60% bottom;
+    background-size:auto 72%;
+    background-image:
+      linear-gradient(
+        180deg,
+        rgba(240,237,229,1) 0%,
+        rgba(240,237,229,.97) 38%,
+        rgba(240,237,229,.45) 56%,
+        rgba(240,237,229,0) 74%
+      ),
+      url("assets/mountains-background.png");
+  }
+  .template-hero .hero-topline{
+    position:relative;
+    left:auto;top:auto;
+    margin-bottom:26px;
+  }
+  .template-hero .hero-copy{
+    position:relative;
+    left:auto;top:auto;
+    width:auto;max-width:520px;min-width:0;
+  }
+  .template-hero h1{
+    font-size:clamp(78px,16vw,118px);
+  }
+}
+
+/* Mobile */
+@media(max-width:760px){
+  .template-hero{
+    min-height:760px;
+    padding:42px 6vw 0;
+    background-position:63% bottom;
+    background-size:auto 53%;
+    background-image:
+      linear-gradient(
+        180deg,
+        rgba(240,237,229,1) 0%,
+        rgba(240,237,229,1) 44%,
+        rgba(240,237,229,.78) 55%,
+        rgba(240,237,229,.10) 70%,
+        rgba(240,237,229,0) 80%
+      ),
+      url("assets/mountains-background.png");
+  }
+
+  .template-hero .hero-author{
+    font-size:15px;
+  }
+
+  .template-hero .hero-author .divider{
+    margin:0 7px;
+  }
+
+  .template-hero h1{
+    font-size:clamp(70px,22vw,102px);
+    line-height:.79;
+  }
+
+  .template-hero .hero-rule{
+    margin:28px 0 22px;
+  }
+
+  .template-hero .intro{
+    font-size:18px;
+    max-width:330px;
+  }
+
+  .template-hero .hero-actions{
+    gap:22px;
+    margin-top:28px;
+  }
+
+  .template-hero .btn{
+    padding:13px 18px;
+    font-size:11px;
+  }
+
+  .template-hero .text-link{
+    font-size:16px;
+  }
+}
+
+.signup .status{display:block;margin-top:8px;min-height:1.2em}
+.signup .status.error{color:#8a3d32}
+.signup .privacy-note{display:block;margin-top:8px;max-width:620px;opacity:.62;line-height:1.45}
+.signup button:disabled{opacity:.55;cursor:wait}

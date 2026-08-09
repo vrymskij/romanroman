@@ -1,12 +1,12 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "romanroman",
+  "main": "worker.js",
   "compatibility_date": "2026-08-10",
-
   "assets": {
-    "directory": "."
+    "directory": "./public",
+    "binding": "ASSETS"
   },
-
   "d1_databases": [
     {
       "binding": "DB",
@@ -15,4 +15,3 @@
     }
   ]
 }
- 
