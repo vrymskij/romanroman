@@ -763,3 +763,34 @@ header{
   .archive-poems h3{font-size:25px}
   .poem-text{font-size:18px;line-height:1.7}
 }
+
+
+/* All poems link: closer to the selected-poems list and more prominent */
+#poems .all-poems-link{
+  margin-top:10px;
+  text-align:left;
+}
+#poems .all-poems-link .text-link{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:11px 2px 4px;
+  font:400 24px/1.15 "Cormorant Garamond",Georgia,serif;
+  color:var(--ink);
+  border-bottom:1px solid rgba(24,24,22,.45);
+  text-decoration:none;
+}
+#poems .all-poems-link .text-link:hover{
+  color:var(--accent);
+  border-color:var(--accent);
+}
+
+@media(max-width:760px){
+  #poems .all-poems-link{
+    margin-top:8px;
+  }
+  #poems .all-poems-link .text-link{
+    font-size:22px;
+    padding-top:10px;
+  }
+}
