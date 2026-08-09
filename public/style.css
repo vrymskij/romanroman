@@ -692,3 +692,49 @@ header{
 .signup .status.error{color:#8a3d32}
 .signup .privacy-note{display:block;margin-top:8px;max-width:620px;opacity:.62;line-height:1.45}
 .signup button:disabled{opacity:.55;cursor:wait}
+
+
+/* ===== Integrated mountain artwork ===== */
+.editorial-hero{background:var(--paper)}
+.editorial-hero .hero-landscape{position:absolute;z-index:1;inset:0;pointer-events:none;overflow:hidden}
+.editorial-hero .hero-landscape img{
+  position:absolute;right:-1.5vw;bottom:-1px;width:88vw;height:92%;
+  object-fit:cover;object-position:right bottom;opacity:.92;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.06) 23%,rgba(0,0,0,.48) 37%,#000 54%,#000 100%);
+  mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.06) 23%,rgba(0,0,0,.48) 37%,#000 54%,#000 100%);
+}
+.editorial-hero .hero-copy,.editorial-hero .hero-topline{z-index:3}
+
+/* ===== Selected poems as an editorial list ===== */
+#poems.section{
+  display:grid;grid-template-columns:minmax(190px,.42fr) minmax(0,1fr);
+  gap:7vw;padding-top:62px;padding-bottom:86px
+}
+#poems .section-title{margin:0}
+#poems .section-title h2{font:400 clamp(34px,4vw,56px)/1 "Cormorant Garamond",Georgia,serif}
+#poems .poems{display:block;border-top:1px solid rgba(23,23,20,.24)}
+#poems .poems>a{
+  position:relative;display:grid;grid-template-columns:minmax(180px,.65fr) minmax(220px,1fr) 24px;
+  gap:28px;align-items:center;min-height:0;padding:22px 4px;border:0;
+  border-bottom:1px solid rgba(23,23,20,.18);background:transparent;
+  transition:padding .18s ease,background .18s ease
+}
+#poems .poems>a:hover{transform:none;padding-left:10px;background:rgba(255,255,255,.14)}
+#poems .poems h3{font:400 27px/1.1 "Cormorant Garamond",Georgia,serif;margin:0}
+#poems .poems p{display:none}
+#poems .poems b{position:static;justify-self:end;font-size:15px}
+#poems .topics{margin:0;display:flex;flex-wrap:wrap;gap:7px}
+#poems .topics span{background:transparent;border:1px solid rgba(23,23,20,.13);padding:4px 8px}
+
+@media(max-width:760px){
+  .editorial-hero .hero-landscape img{
+    width:145vw;height:68%;right:-35vw;opacity:.72;
+    -webkit-mask-image:linear-gradient(180deg,transparent 0%,rgba(0,0,0,.38) 20%,#000 42%,#000 100%);
+    mask-image:linear-gradient(180deg,transparent 0%,rgba(0,0,0,.38) 20%,#000 42%,#000 100%)
+  }
+  #poems.section{display:block;padding-top:48px}
+  #poems .section-title{margin-bottom:22px}
+  #poems .poems>a{grid-template-columns:1fr 22px;gap:12px;padding:19px 2px}
+  #poems .topics{grid-column:1;margin-top:8px}
+  #poems .poems b{grid-column:2;grid-row:1 / span 2}
+}
