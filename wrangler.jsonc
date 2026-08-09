@@ -1,0 +1,17 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "romanroman",
+  "compatibility_date": "2026-08-10",
+
+  "assets": {
+    "directory": "."
+  },
+
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "romanroman-emails",
+      "database_id": "51d3af6c-ab72-4a0b-acf0-17065a6162ff"
+    }
+  ]
+}
