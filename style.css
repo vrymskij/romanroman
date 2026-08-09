@@ -8,3 +8,10 @@ header{height:72px;padding:0 5vw;display:flex;align-items:center;justify-content
 .contact{background:#1d1c19;color:#eee9df;padding:120px 8vw;text-align:center}.contact .kicker{color:#918a80}.contact h2{font-size:clamp(58px,8vw,110px);margin:25px 0 35px}.contact>p:not(.kicker){max-width:590px;margin:0 auto;color:#aaa49a}.contact-signup{max-width:590px;margin:35px auto 0}.contact-signup input{color:#eee9df;border-color:#5c5851}.contact-signup button{background:#eee9df;color:#1d1c19;border-color:#eee9df}.socials{display:flex;justify-content:center;gap:28px;margin-top:45px;font-size:11px;text-transform:uppercase;letter-spacing:.1em}
 footer{padding:22px 5vw;display:flex;justify-content:space-between;border-top:1px solid #c9c3b8;font-size:10px;color:#746e65;text-transform:uppercase;letter-spacing:.12em}
 @media(max-width:760px){nav{display:none}.menu{display:block}.hero{grid-template-columns:1fr;padding:18vw 7vw 12vw}.landscape{margin-top:35px}.hero-signup{margin-top:55px}.section{grid-template-columns:1fr;padding:80px 7vw;gap:40px}.audio-list>div{grid-template-columns:35px 1fr}.audio-list audio{grid-column:2}.signup>div{flex-direction:column}.signup button{width:100%}.hero-actions{align-items:flex-start;flex-direction:column}.contact{padding:90px 7vw}footer span:nth-child(2){display:none}}
+
+/* 2026-08 refinement */
+.landscape svg{stroke-width:1.05;stroke-linecap:round;stroke-linejoin:round}
+.section-title h2{margin-top:0}
+.site-footer{gap:28px;align-items:center;text-transform:none;letter-spacing:.04em;line-height:1.5}
+.site-footer>span{max-width:900px}
+@media(max-width:760px){.site-footer{align-items:flex-start;gap:20px}.site-footer>span{display:block!important}}

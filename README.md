@@ -14,3 +14,7 @@ The current forms intentionally work in demo mode only. Connect them to a form/n
 
 ## GitHub Pages
 Upload the contents to a GitHub repository, then enable Pages in repository Settings → Pages.
+
+
+## August 2026 refinements
+Hero illustration refined; section numbering removed; audio download/playback-rate options disabled in native controls; copyright notice added.
