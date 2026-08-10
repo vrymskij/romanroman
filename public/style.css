@@ -956,3 +956,341 @@ header{
     line-height:1.75;
   }
 }
+
+
+/* ===== Clean poem pages: no illustration hero ===== */
+.poem-page-clean .poem-title-block{
+  max-width:1180px;
+  margin:0 auto;
+  padding:88px 7vw 62px;
+  border-bottom:1px solid rgba(24,24,22,.14);
+}
+.poem-page-clean .back-link{
+  display:inline-block;
+  margin:0 0 54px;
+  color:inherit;
+  text-decoration:none;
+  font-size:13px;
+  letter-spacing:.03em;
+  opacity:.66;
+}
+.poem-title-grid{
+  display:grid;
+  grid-template-columns:minmax(150px,220px) minmax(0,720px);
+  gap:clamp(38px,7vw,100px);
+  align-items:end;
+}
+.poem-title-grid h1{
+  margin:0;
+  font:400 clamp(56px,7.2vw,96px)/.91 "Cormorant Garamond",Georgia,serif;
+  letter-spacing:-.035em;
+  max-width:720px;
+}
+.poem-meta{
+  padding-bottom:8px;
+}
+.poem-meta .poem-author{
+  margin-bottom:10px;
+}
+.poem-meta .poem-date{
+  margin-bottom:18px;
+}
+.poem-page-clean .poem-content{
+  padding-top:64px;
+}
+.poem-page-clean .poem-content .poem-article{
+  max-width:760px;
+  margin:0 auto;
+}
+.poem-page-clean .poem-text{
+  font-weight:400;
+}
+
+/* Smaller contact headline */
+#contact h2{
+  font-size:clamp(38px,5.2vw,66px)!important;
+  line-height:.98!important;
+  max-width:820px;
+}
+
+@media(max-width:760px){
+  .poem-page-clean .poem-title-block{
+    padding:54px 6vw 42px;
+  }
+  .poem-page-clean .back-link{
+    margin-bottom:38px;
+  }
+  .poem-title-grid{
+    display:block;
+  }
+  .poem-meta{
+    margin-bottom:26px;
+  }
+  .poem-title-grid h1{
+    font-size:clamp(48px,14vw,70px);
+    max-width:94%;
+  }
+  .poem-page-clean .poem-content{
+    padding-top:46px;
+  }
+  #contact h2{
+    font-size:clamp(34px,10vw,48px)!important;
+  }
+}
+
+
+/* ===== Reading-order poem page ===== */
+.poem-page-reading{
+  background:var(--paper);
+}
+.poem-reading-shell{
+  max-width:1040px;
+  margin:0 auto;
+  padding:74px 7vw 100px;
+}
+.poem-page-reading .back-link{
+  display:inline-block;
+  margin:0 0 58px;
+  color:inherit;
+  text-decoration:none;
+  font-size:13px;
+  letter-spacing:.03em;
+  opacity:.64;
+}
+.poem-reading{
+  max-width:760px;
+  margin:0 auto;
+}
+.poem-reading .poem-author{
+  margin:0 0 17px;
+  font:500 12px/1.2 Manrope,sans-serif;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--accent);
+}
+.poem-reading h1{
+  margin:0 0 18px;
+  max-width:660px;
+  font:400 clamp(46px,5.8vw,76px)/.94 "Cormorant Garamond",Georgia,serif;
+  letter-spacing:-.03em;
+}
+.poem-reading .topics{
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+  margin:0 0 54px;
+}
+.poem-reading .topics span{
+  display:inline-block;
+  padding:4px 9px;
+  border:1px solid rgba(24,24,22,.14);
+  border-radius:999px;
+  background:transparent;
+  font-size:10px;
+}
+.poem-reading .poem-text{
+  margin:0;
+  padding:0;
+  max-width:720px;
+  white-space:pre-wrap;
+  background:transparent;
+  border:0;
+  color:var(--ink);
+  font:400 21px/1.78 Georgia,"Times New Roman",serif;
+}
+.poem-date-end{
+  margin:52px 0 0;
+  padding-top:17px;
+  border-top:1px solid rgba(24,24,22,.13);
+  font:500 10px/1 Manrope,sans-serif;
+  letter-spacing:.08em;
+  color:#706961;
+}
+.poem-page-reading .poem-audio{
+  margin-top:38px;
+}
+
+/* Landing-page audio: no white panel; blend into the paper background. */
+#audio,
+#audio .audio-list,
+#audio .audio-list>div{
+  background:transparent!important;
+}
+#audio audio{
+  background:transparent!important;
+  border:0!important;
+  box-shadow:none!important;
+  mix-blend-mode:multiply;
+}
+#audio audio::-webkit-media-controls-panel{
+  background-color:var(--paper)!important;
+}
+
+/* Contact heading: centered and deliberately smaller. */
+#contact h2{
+  max-width:760px!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
+  text-align:center!important;
+  font-size:clamp(32px,4.2vw,52px)!important;
+  line-height:1.02!important;
+}
+#contact>p:not(.kicker){
+  max-width:620px;
+  margin-left:auto;
+  margin-right:auto;
+  text-align:center;
+}
+#contact .kicker{
+  text-align:center;
+}
+
+@media(max-width:760px){
+  .poem-reading-shell{
+    padding:50px 6vw 78px;
+  }
+  .poem-page-reading .back-link{
+    margin-bottom:42px;
+  }
+  .poem-reading h1{
+    font-size:clamp(44px,13vw,62px);
+    margin-bottom:16px;
+  }
+  .poem-reading .topics{
+    margin-bottom:40px;
+  }
+  .poem-reading .poem-text{
+    font-size:18px;
+    line-height:1.72;
+  }
+  .poem-date-end{
+    margin-top:42px;
+  }
+  #contact h2{
+    font-size:clamp(30px,9vw,42px)!important;
+    max-width:92%!important;
+  }
+}
+
+
+/* ===== FINAL approved refinements ===== */
+.poem-page-reading header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:28px;
+}
+.poem-page-reading header .logo{
+  flex:0 0 auto;
+  white-space:nowrap;
+}
+.poem-page-reading header nav{
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  gap:clamp(22px,3.2vw,46px);
+  flex-wrap:nowrap;
+}
+.poem-page-reading header nav a{white-space:nowrap}
+
+.poem-reading h1{
+  font-size:clamp(40px,4.8vw,64px)!important;
+  line-height:.96!important;
+  max-width:620px;
+}
+
+#poems .all-poems-link{
+  margin-top:-12px!important;
+  transform:translateY(-4px)!important;
+}
+#poems .all-poems-link .text-link{padding-top:0!important}
+
+#audio,
+#audio .audio-list,
+#audio .audio-list>div,
+.poem-page-reading .poem-audio{
+  background:transparent!important;
+}
+#audio audio,
+.poem-page-reading audio{
+  accent-color:#cbbda8;
+  color-scheme:light;
+  background:#d8cdbd!important;
+  border:0!important;
+  border-radius:999px;
+  overflow:hidden;
+  box-shadow:none!important;
+  mix-blend-mode:normal!important;
+  filter:sepia(.24) saturate(.58) brightness(1.22) contrast(.82);
+}
+#audio audio::-webkit-media-controls-panel,
+.poem-page-reading audio::-webkit-media-controls-panel{
+  background-color:#d8cdbd!important;
+}
+#audio audio::-webkit-media-controls-play-button,
+#audio audio::-webkit-media-controls-mute-button,
+#audio audio::-webkit-media-controls-volume-slider,
+.poem-page-reading audio::-webkit-media-controls-play-button,
+.poem-page-reading audio::-webkit-media-controls-mute-button,
+.poem-page-reading audio::-webkit-media-controls-volume-slider{
+  filter:sepia(.65) saturate(.35) brightness(1.55) contrast(.72);
+}
+
+#contact h2{
+  max-width:760px!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
+  text-align:center!important;
+  font-size:clamp(32px,4.2vw,52px)!important;
+  line-height:1.02!important;
+}
+#contact>p:not(.kicker){
+  max-width:620px;
+  margin-left:auto;
+  margin-right:auto;
+  text-align:center;
+}
+#contact .kicker{text-align:center}
+
+@media(max-width:760px){
+  .poem-page-reading header{
+    display:flex;
+    min-height:64px;
+    padding:0 5vw;
+  }
+  .poem-page-reading header .logo{
+    max-width:72%;
+    font-size:14px;
+  }
+  .poem-page-reading header .menu{
+    display:block;
+    flex:0 0 auto;
+  }
+  .poem-page-reading header nav{
+    position:absolute;
+    top:64px;
+    left:0;
+    right:0;
+    display:none;
+    grid-template-columns:1fr;
+    gap:0;
+    padding:8px 5vw 14px;
+    background:rgba(240,237,229,.98);
+    border-top:1px solid rgba(23,23,20,.08);
+    border-bottom:1px solid rgba(23,23,20,.08);
+    z-index:20;
+  }
+  .poem-page-reading header nav a{
+    white-space:nowrap;
+    min-height:42px;
+    display:flex;
+    align-items:center;
+  }
+  .poem-reading h1{
+    font-size:clamp(38px,11vw,52px)!important;
+  }
+  #contact h2{
+    font-size:clamp(30px,9vw,42px)!important;
+    max-width:92%!important;
+  }
+}

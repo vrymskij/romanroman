@@ -61,7 +61,8 @@ function poemPage(p) {
     ? `<section class="poem-audio"><p class="kicker">Аудіо</p><audio controls controlsList="nodownload noplaybackrate" disableRemotePlayback preload="none"><source src="../audio/${esc(p.audio)}" type="audio/mpeg"></audio></section>`
     : "";
   const displayDate = p.date || p.year || "";
-  const dateHtml = displayDate ? `<p class="poem-date">${esc(displayDate)}</p>` : "";
+  const dateHtml = displayDate ? `<p class="poem-date-end">${esc(displayDate)}</p>` : "";
+
   return `<!doctype html>
 <html lang="uk">
 <head>
@@ -71,33 +72,26 @@ function poemPage(p) {
 <title>${esc(p.title)} — В. Роман-Римський</title>
 <link rel="stylesheet" href="../style.css">
 </head>
-<body class="poem-page">
+<body class="poem-page poem-page-reading">
 <header>
   <a class="logo" href="../index.html">ПОЕЗІЯ ТА ЕСЕ</a>
   <button class="menu" aria-label="Меню">☰</button>
   <nav><a href="../poems.html">Усі вірші</a><a href="../index.html#about">Про автора</a><a href="../index.html#audio">Аудіо</a><a href="../index.html#contact">Контакти</a></nav>
 </header>
 
-<main>
-  <section class="poem-hero">
-    <div class="poem-hero-art" aria-hidden="true">
-      <img src="../assets/mountains-line-transparent.png" alt="">
-    </div>
-    <div class="poem-hero-copy">
-      <a class="back-link" href="../poems.html">← Усі вірші</a>
-      <p class="poem-author">В. Роман-Римський</p>
-      ${dateHtml}
-      <h1>${esc(p.title)}</h1>
-      <div class="topics">${topicsHtml(p)}</div>
-    </div>
-  </section>
+<main class="poem-reading-shell">
+  <a class="back-link" href="../poems.html">← Усі вірші</a>
 
-  <section class="poem-content">
-    <article class="poem-article">
-      <pre class="poem-text">${esc(p.body)}</pre>
-      ${audio}
-    </article>
-  </section>
+  <article class="poem-reading">
+    <p class="poem-author">В. Роман-Римський</p>
+    <h1>${esc(p.title)}</h1>
+    <div class="topics">${topicsHtml(p)}</div>
+
+    <pre class="poem-text">${esc(p.body)}</pre>
+
+    ${dateHtml}
+    ${audio}
+  </article>
 </main>
 
 <footer class="site-footer"><span>© <span id="year"></span> · Усі тексти та аудіоматеріали захищені авторським правом. Використання та публікація можливі лише з дозволу автора.</span><a href="../index.html">На головну ↑</a></footer>
