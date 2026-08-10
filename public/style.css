@@ -1472,7 +1472,7 @@ header nav a{
 
 /* ===== Balanced tertiary typography ===== */
 @media(min-width:761px){
-  header .logo{font-size:19px!important;line-height:1.2!important}
+  header .logo{font-size:20px!important;line-height:1.2!important}
   header nav a{font-size:24px!important;line-height:1.2!important}
   .template-hero .hero-author,
   .editorial-hero .hero-author,
@@ -1488,7 +1488,7 @@ header nav a{
 }
 
 @media(max-width:760px){
-  header .logo{font-size:15px!important}
+  header .logo{font-size:20px!important}
   header nav a{font-size:20px!important}
   .template-hero .hero-author,
   .editorial-hero .hero-author,
