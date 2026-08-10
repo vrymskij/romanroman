@@ -1502,3 +1502,11 @@ header nav a{
   .poem-reading .topics span,
   .topics span{font-size:11px!important;padding:5px 8px!important}
 }
+
+.hero .intro {
+  font-size: 20px !important;
+}
+
+.site-footer {
+  font-size: 12px !important;
+}
