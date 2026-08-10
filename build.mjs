@@ -70,7 +70,7 @@ function poemPage(p) {
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="${esc(p.title)} — В. Роман-Римський">
 <title>${esc(p.title)} — В. Роман-Римський</title>
-<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../style.css?v=3">
 </head>
 <body class="poem-page poem-page-reading">
 <header>
@@ -112,7 +112,7 @@ function archivePage(poems) {
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="Усі опубліковані вірші В. Романа-Римського.">
 <title>Вірші — В. Роман-Римський</title>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=3">
 </head>
 <body class="archive-page">
 <header>
