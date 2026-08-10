@@ -1537,3 +1537,18 @@ header nav a{
   max-width: none !important;
   width: auto !important;
 }
+
+/* Individual poem — wider reading column */
+pre.poem-text {
+  width: 800px !important;
+  max-width: calc(100vw - 110px) !important;
+  white-space: pre-wrap !important;
+  overflow-wrap: normal !important;
+  word-break: normal !important;
+}
+@media (max-width: 760px) {
+  pre.poem-text {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
