@@ -27,7 +27,7 @@ footer{padding:22px 5vw;display:flex;justify-content:space-between;border-top:1p
   .logo{max-width:72%;line-height:1.25;letter-spacing:.18em}
   .menu{display:block;padding:8px 0 8px 12px;line-height:1}
   header nav{display:none;position:absolute;top:64px;left:0;right:0;background:rgba(240,237,229,.98);border-top:1px solid #cfc9bd;border-bottom:1px solid #cfc9bd;padding:18px 7vw 20px;grid-template-columns:1fr 1fr;gap:0;z-index:20}
-  header nav a{display:flex;align-items:center;justify-content:flex-start;min-height:42px;border-bottom:1px solid rgba(207,201,189,.65);font-size:12px;letter-spacing:.11em}
+  header nav a{display:flex;align-items:center;justify-content:flex-start;min-height:42px;border-bottom:1px solid rgba(207,201,189,.65);font-size:16px;letter-spacing:.11em}
   header nav a:nth-last-child(-n+2){border-bottom:0}
   .hero-kicker{align-items:flex-start;gap:5px;flex-direction:column}
   .hero-kicker .author-inline:before{content:"";margin:0}
