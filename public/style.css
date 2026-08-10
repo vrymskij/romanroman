@@ -1375,3 +1375,50 @@ header nav a,
     font-size:13px!important;
   }
 }
+
+
+/* ===== Header + hero metadata size correction ===== */
+
+/* Main top navigation */
+header .logo,
+header nav a{
+  font-size:16px!important;
+  line-height:1.25!important;
+}
+
+/* "Авторський простір | В. Роман-Римський" */
+.hero-author,
+.hero .hero-author,
+.hero-meta,
+.hero .eyebrow{
+  font-size:15px!important;
+  line-height:1.35!important;
+}
+
+/* Desktop: make these clearly readable without changing the main headline scale */
+@media(min-width:761px){
+  header .logo,
+  header nav a{
+    font-size:16px!important;
+  }
+  .hero-author,
+  .hero .hero-author,
+  .hero-meta,
+  .hero .eyebrow{
+    font-size:15px!important;
+  }
+}
+
+/* Mobile remains readable but compact */
+@media(max-width:760px){
+  header .logo,
+  header nav a{
+    font-size:14px!important;
+  }
+  .hero-author,
+  .hero .hero-author,
+  .hero-meta,
+  .hero .eyebrow{
+    font-size:14px!important;
+  }
+}
