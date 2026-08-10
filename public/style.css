@@ -1522,3 +1522,18 @@ header nav a{
     max-width: 100% !important;
   }
 }
+
+/* Wider individual poem page */
+.poem-page main,
+.poem-reading,
+.poem-body,
+.poem-text {
+  width: 100% !important;
+  max-width: 900px !important;
+}
+
+.poem-body p,
+.poem-text p {
+  max-width: none !important;
+  width: auto !important;
+}
