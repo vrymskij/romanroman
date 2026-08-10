@@ -1513,7 +1513,7 @@ header nav a{
 
 .poem-body,
 .poem-text {
-  max-width: 850px !important;
+  max-width: 950px !important;
 }
 
 @media(max-width:760px) {
