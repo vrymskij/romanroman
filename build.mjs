@@ -68,8 +68,9 @@ function poemPage(p) {
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="${esc(p.title)} — В. Роман-Римський">
-<title>${esc(p.title)} — В. Роман-Римський</title>
+<title>${esc(p.title)} — В. Роман-Римський | Українська поезія</title>
+<meta name="description" content="«${esc(p.title)}» — вірш В. Романа-Римського. Сучасна українська поезія.">
+<link rel="canonical" href="https://roman-roman.com/poems/${encodeURIComponent(p.slug)}.html">
 <link rel="stylesheet" href="../style.css?v=3">
 </head>
 <body class="poem-page poem-page-reading">
@@ -110,8 +111,9 @@ function archivePage(poems) {
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Усі опубліковані вірші В. Романа-Римського.">
-<title>Вірші — В. Роман-Римський</title>
+<title>Вірші В. Романа-Римського — сучасна українська поезія</title>
+<meta name="description" content="Усі опубліковані вірші В. Романа-Римського. Сучасна українська поезія про людину, суспільство, свободу і час.">
+<link rel="canonical" href="https://roman-roman.com/poems.html">
 <link rel="stylesheet" href="style.css?v=3">
 </head>
 <body class="archive-page">
