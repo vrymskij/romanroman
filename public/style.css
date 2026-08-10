@@ -1422,3 +1422,83 @@ header nav a{
     font-size:14px!important;
   }
 }
+
+
+/* ===== Readable entry typography — final correction ===== */
+
+/* Desktop top-left identity + top-right navigation */
+@media(min-width:761px){
+  header .logo{
+    font-size:20px!important;
+    line-height:1.2!important;
+  }
+  header nav{
+    gap:38px!important;
+  }
+  header nav a{
+    font-size:19px!important;
+    line-height:1.2!important;
+  }
+
+  /* Авторський простір | В. Роман-Римський */
+  .template-hero .hero-author,
+  .editorial-hero .hero-author,
+  .hero-author{
+    font-size:19px!important;
+    line-height:1.25!important;
+  }
+}
+
+/* Mobile: still clearly readable */
+@media(max-width:760px){
+  header .logo{
+    font-size:16px!important;
+  }
+  header nav a{
+    font-size:16px!important;
+  }
+  .template-hero .hero-author,
+  .editorial-hero .hero-author,
+  .hero-author{
+    font-size:16px!important;
+  }
+}
+
+/* Empty audio section: no fake rows or empty bordered list */
+#audio .audio-list:empty{
+  display:none!important;
+}
+
+
+/* ===== Balanced tertiary typography ===== */
+@media(min-width:761px){
+  header .logo{font-size:19px!important;line-height:1.2!important}
+  header nav a{font-size:18px!important;line-height:1.2!important}
+  .template-hero .hero-author,
+  .editorial-hero .hero-author,
+  .hero-author{font-size:17px!important;line-height:1.3!important}
+
+  #poems .poems h3,
+  .archive-poems h3{font-size:32px!important;line-height:1.07!important}
+
+  #poems .topics span,
+  .archive-poems .topics span,
+  .poem-reading .topics span,
+  .topics span{font-size:12px!important;padding:5px 9px!important}
+}
+
+@media(max-width:760px){
+  header .logo{font-size:15px!important}
+  header nav a{font-size:15px!important}
+  .template-hero .hero-author,
+  .editorial-hero .hero-author,
+  .hero-author{font-size:14px!important}
+
+  #poems .poems h3,
+  .archive-poems h3{font-size:28px!important}
+
+  #poems .topics span,
+  .archive-poems .topics span,
+  .poem-reading .topics span,
+  .topics span{font-size:11px!important;padding:5px 8px!important}
+}
