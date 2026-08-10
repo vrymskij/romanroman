@@ -1488,11 +1488,11 @@ header nav a{
 }
 
 @media(max-width:760px){
-  header .logo{font-size:20px!important}
+  header .logo{font-size:24px!important}
   header nav a{font-size:20px!important}
   .template-hero .hero-author,
   .editorial-hero .hero-author,
-  .hero-author{font-size:14px!important}
+  .hero-author{font-size:20px!important}
 
   #poems .poems h3,
   .archive-poems h3{font-size:28px!important}
