@@ -1,88 +1,56 @@
-document.getElementById('year').textContent = new Date().getFullYear();
+document.getElementById("year").textContent = new Date().getFullYear();
 
-const menu = document.querySelector('.menu');
-const nav = document.querySelector('nav');
+const menu = document.querySelector(".menu");
+const nav = document.querySelector("header nav");
 if (menu && nav) {
-  menu.addEventListener('click', () => {
-    nav.style.display = nav.style.display === 'grid' ? 'none' : 'grid';
+  menu.addEventListener("click", () => {
+    nav.style.display = nav.style.display === "grid" ? "none" : "grid";
   });
 }
 
-const like = document.getElementById('likeBook');
-const count = document.getElementById('likeCount');
-let bookInterested = false;
+const likeButton = document.getElementById("likeBook");
+const likeCount = document.getElementById("likeCount");
+const bookStatus = document.getElementById("bookStatus");
+const voteKey = "romanroman_book_interest_v1";
 
-function paintBookInterest() {
-  if (!like || !count) return;
-  like.classList.toggle('liked', bookInterested);
-  like.querySelector('span').textContent = bookInterested ? 'Цікавить книга' : 'Хочу книгу';
-  count.textContent = bookInterested ? '✓' : '';
-}
-paintBookInterest();
+async function loadBookCount() {
+  if (!likeButton || !likeCount) return;
+  try {
+    const response = await fetch("/book-interest", { cache: "no-store" });
+    if (!response.ok) return;
+    const data = await response.json();
+    likeCount.textContent = String(data.count ?? 0);
 
-if (like) {
-  like.addEventListener('click', () => {
-    bookInterested = !bookInterested;
-    paintBookInterest();
-    if (bookInterested) {
-      const input = document.querySelector('form[data-kind="book"] input[type="email"]');
-      if (input) input.focus();
+    if (localStorage.getItem(voteKey) === "1") {
+      likeButton.classList.add("liked");
+      likeButton.disabled = true;
+      likeButton.querySelector("span").textContent = "Враховано";
     }
-  });
+  } catch {}
 }
 
-document.querySelectorAll('.signup').forEach((form) => {
-  form.addEventListener('submit', async (event) => {
-    event.preventDefault();
+if (likeButton) {
+  likeButton.addEventListener("click", async () => {
+    if (localStorage.getItem(voteKey) === "1") return;
 
-    const input = form.querySelector('input[type="email"]');
-    const button = form.querySelector('button[type="submit"], button:not([type])');
-    const status = form.querySelector('.status');
-    const email = input?.value.trim() || '';
-    const interest = form.dataset.kind === 'book' ? 'paper_book' : 'updates';
-
-    if (!email) return;
-
-    if (button) button.disabled = true;
-    if (status) {
-      status.textContent = 'Зберігаємо…';
-      status.classList.remove('error');
-    }
+    likeButton.disabled = true;
+    if (bookStatus) bookStatus.textContent = "";
 
     try {
-      const response = await fetch('/subscribe', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, interest })
-      });
+      const response = await fetch("/book-interest", { method: "POST" });
+      if (!response.ok) throw new Error("Vote failed");
 
-      const data = await response.json().catch(() => ({}));
-
-      if (!response.ok) {
-        throw new Error(data.error || 'Не вдалося зберегти email.');
-      }
-
-      if (status) {
-        status.textContent = data.duplicate
-          ? 'Цей email уже є у списку.'
-          : (interest === 'paper_book'
-              ? 'Дякую. Інтерес до паперової книги збережено.'
-              : 'Дякую. Email збережено.');
-      }
-
-      form.reset();
-
-      if (interest === 'paper_book') {
-        bookInterested = true;
-        paintBookInterest();
-      }
-    } catch (error) {
-      if (status) {
-        status.textContent = 'Не вдалося зберегти email. Спробуйте ще раз.';
-        status.classList.add('error');
-      }
-    } finally {
-      if (button) button.disabled = false;
+      const data = await response.json();
+      localStorage.setItem(voteKey, "1");
+      likeCount.textContent = String(data.count ?? likeCount.textContent);
+      likeButton.classList.add("liked");
+      likeButton.querySelector("span").textContent = "Враховано";
+      if (bookStatus) bookStatus.textContent = "Дякую — ваш інтерес враховано.";
+    } catch {
+      likeButton.disabled = false;
+      if (bookStatus) bookStatus.textContent = "Не вдалося зберегти. Спробуйте ще раз.";
     }
   });
-});
+}
+
+loadBookCount();
