@@ -1510,3 +1510,15 @@ header nav a{
 .site-footer {
   font-size: 12px !important;
 }
+
+.poem-body,
+.poem-text {
+  max-width: 850px !important;
+}
+
+@media(max-width:760px) {
+  .poem-body,
+  .poem-text {
+    max-width: 100% !important;
+  }
+}
