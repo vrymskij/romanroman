@@ -1563,3 +1563,14 @@ pre.poem-text {
     line-height: 1.55 !important;
   }
 }
+
+
+/* ===== No-email / book-interest refinement ===== */
+.book-note{
+  display:block;
+  min-height:1.4em;
+  margin-top:8px;
+  color:#645f57;
+  font-size:12px;
+}
+.like:disabled{cursor:default}
