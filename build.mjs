@@ -124,7 +124,7 @@ function archivePage(poems) {
 <main class="archive-shell">
   <p class="kicker">В. Роман-Римський</p>
   <h1>Усі <i>вірші</i></h1>
-  <p class="archive-intro">Повний перелік опублікованих текстів.</p>
+  <p class="archive-intro">Вірші В. Романа-Римського — сучасна українська поезія про людину, суспільство і час.</p>
   <div class="poems archive-poems">${rows}</div>
 </main>
 <footer class="site-footer"><span>© <span id="year"></span> · Усі тексти та аудіоматеріали захищені авторським правом. Використання та публікація можливі лише з дозволу автора.</span><a href="index.html">На головну ↑</a></footer>
