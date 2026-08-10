@@ -1294,3 +1294,84 @@ header{
     max-width:92%!important;
   }
 }
+
+
+/* ===== Typography scale refinement ===== */
+
+/* Slightly larger tertiary typography across the site */
+.hero-author,
+.kicker,
+.author-name,
+.poem-author,
+.poem-page-reading .poem-author,
+.site-footer,
+header,
+header nav,
+.logo,
+.topics span,
+.poems .topics span,
+.archive-poems .topics span{
+  font-size:clamp(12px,1.05vw,14px)!important;
+}
+
+/* Names of poems in lists */
+#poems .poems h3,
+.archive-poems h3{
+  font-size:clamp(28px,2.4vw,34px)!important;
+  line-height:1.08!important;
+}
+
+/* Slightly larger theme pills */
+.topics span,
+#poems .topics span,
+.archive-poems .topics span,
+.poem-reading .topics span{
+  font-size:11px!important;
+  padding:5px 9px!important;
+}
+
+/* Upper-corner navigation / author line */
+.hero-author{
+  letter-spacing:.04em;
+}
+header nav a,
+.logo{
+  line-height:1.25;
+}
+
+/* Prevent "Усі вірші" from colliding with the last poem divider */
+#poems .all-poems-link{
+  margin-top:12px!important;
+  transform:none!important;
+}
+#poems .all-poems-link .text-link{
+  display:inline-block;
+  padding-top:4px!important;
+  font-size:clamp(24px,2.2vw,30px)!important;
+}
+
+/* Mobile spacing fix */
+@media(max-width:760px){
+  #poems .poems>a{
+    padding-bottom:20px!important;
+  }
+  #poems .all-poems-link{
+    margin-top:18px!important;
+    padding-top:2px;
+  }
+  #poems .all-poems-link .text-link{
+    font-size:24px!important;
+  }
+  #poems .poems h3,
+  .archive-poems h3{
+    font-size:28px!important;
+  }
+  .hero-author,
+  header nav a,
+  .logo,
+  .kicker,
+  .author-name,
+  .poem-author{
+    font-size:13px!important;
+  }
+}
