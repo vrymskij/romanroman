@@ -1552,3 +1552,14 @@ pre.poem-text {
     max-width: 100% !important;
   }
 }
+
+@media (max-width: 760px) {
+  pre.poem-text {
+    width: 100% !important;
+    max-width: 100% !important;
+
+    /* Mobile poem typography */
+    font-size: 21px !important;
+    line-height: 1.55 !important;
+  }
+}
