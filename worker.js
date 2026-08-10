@@ -1,5 +1,3 @@
-const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
 function json(data, status = 200) {
   return new Response(JSON.stringify(data), {
     status,
@@ -10,45 +8,45 @@ function json(data, status = 200) {
   });
 }
 
+async function ensureBookCounter(env) {
+  await env.DB.prepare(`
+    CREATE TABLE IF NOT EXISTS book_interest (
+      id INTEGER PRIMARY KEY CHECK (id = 1),
+      count INTEGER NOT NULL DEFAULT 0
+    )
+  `).run();
+
+  await env.DB.prepare(`
+    INSERT OR IGNORE INTO book_interest (id, count) VALUES (1, 0)
+  `).run();
+}
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
 
-    if (url.pathname === "/subscribe") {
-      if (request.method !== "POST") {
-        return json({ error: "Method not allowed" }, 405);
+    if (url.pathname === "/book-interest") {
+      await ensureBookCounter(env);
+
+      if (request.method === "GET") {
+        const row = await env.DB.prepare(
+          "SELECT count FROM book_interest WHERE id = 1"
+        ).first();
+        return json({ count: Number(row?.count || 0) });
       }
 
-      let body;
-      try {
-        body = await request.json();
-      } catch {
-        return json({ error: "Invalid request" }, 400);
+      if (request.method === "POST") {
+        await env.DB.prepare(
+          "UPDATE book_interest SET count = count + 1 WHERE id = 1"
+        ).run();
+
+        const row = await env.DB.prepare(
+          "SELECT count FROM book_interest WHERE id = 1"
+        ).first();
+        return json({ ok: true, count: Number(row?.count || 0) });
       }
 
-      const email = String(body?.email || "").trim().toLowerCase();
-      const interest = String(body?.interest || "").trim();
-
-      if (!EMAIL_RE.test(email) || email.length > 254) {
-        return json({ error: "Invalid email" }, 400);
-      }
-
-      if (!["updates", "paper_book"].includes(interest)) {
-        return json({ error: "Invalid interest" }, 400);
-      }
-
-      try {
-        const result = await env.DB.prepare(
-          `INSERT OR IGNORE INTO subscribers (email, interest)
-           VALUES (?, ?)`
-        ).bind(email, interest).run();
-
-        const inserted = Number(result?.meta?.changes || 0) > 0;
-        return json({ ok: true, duplicate: !inserted });
-      } catch (error) {
-        console.error("D1 subscription error", error);
-        return json({ error: "Database error" }, 500);
-      }
+      return json({ error: "Method not allowed" }, 405);
     }
 
     return env.ASSETS.fetch(request);
