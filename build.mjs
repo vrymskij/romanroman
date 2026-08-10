@@ -152,4 +152,27 @@ index = index.replace(
   block
 );
 fs.writeFileSync(INDEX, index);
-console.log(`Built ${poems.length} poem(s); ${featured.length} featured.`);
+
+// Generate search-engine discovery files automatically.
+const SITE = "https://roman-roman.com";
+const sitemapUrls = [
+  `${SITE}/`,
+  `${SITE}/poems.html`,
+  ...poems.map(p => `${SITE}/poems/${encodeURIComponent(p.slug)}.html`)
+];
+
+const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${sitemapUrls.map(url => `  <url><loc>${url}</loc></url>`).join("\n")}
+</urlset>
+`;
+fs.writeFileSync(path.join(PUBLIC, "sitemap.xml"), sitemap);
+
+const robots = `User-agent: *
+Allow: /
+
+Sitemap: ${SITE}/sitemap.xml
+`;
+fs.writeFileSync(path.join(PUBLIC, "robots.txt"), robots);
+
+console.log(`Built ${poems.length} poem(s); ${featured.length} featured; sitemap.xml and robots.txt generated.`);
