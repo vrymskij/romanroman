@@ -1644,3 +1644,11 @@ pre.poem-text {
     mask-image:linear-gradient(180deg,transparent 0%,rgba(0,0,0,.10) 18%,rgba(0,0,0,.55) 34%,#000 52%,#000 100%)!important;
   }
 }
+
+/* ===== 2026-08-11 mobile artwork moved upward ===== */
+@media (max-width:760px){
+  .editorial-hero .hero-landscape img{
+    height:54%!important;
+    bottom:1%!important;
+  }
+}
