@@ -75,7 +75,6 @@ function poemPage(p) {
 </head>
 <body class="poem-page poem-page-reading">
 <header>
-  <a class="logo" href="../index.html">ПОЕЗІЯ ТА ЕСЕ</a>
   <button class="menu" aria-label="Меню">☰</button>
   <nav><a href="../index.html#about">Про автора</a><a href="../index.html#audio">Аудіо</a><a href="../index.html#contact">Контакти</a></nav>
 </header>
@@ -118,7 +117,6 @@ function archivePage(poems) {
 </head>
 <body class="archive-page">
 <header>
-  <a class="logo" href="index.html">ПОЕЗІЯ ТА ЕСЕ</a>
   <button class="menu" aria-label="Меню">☰</button>
   <nav><a href="index.html#about">Про автора</a><a href="index.html#audio">Аудіо</a><a href="index.html#contact">Контакти</a></nav>
 </header>
