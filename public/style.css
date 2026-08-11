@@ -1714,3 +1714,13 @@ header nav a,
     top:64px!important;
   }
 }
+
+
+/* ===== Mobile landing-page title size ===== */
+@media (max-width:760px){
+  body:not(.archive-page):not(.poem-page-reading) > header .logo{
+    font-size:12px!important;
+    line-height:1.2!important;
+    white-space:nowrap!important;
+  }
+}
