@@ -71,11 +71,11 @@ function poemPage(p) {
 <title>${esc(p.title)} — В. Роман-Римський | Українська поезія</title>
 <meta name="description" content="«${esc(p.title)}» — вірш В. Романа-Римського. Сучасна українська поезія.">
 <link rel="canonical" href="https://roman-roman.com/poems/${encodeURIComponent(p.slug)}.html">
-<link rel="stylesheet" href="../style.css?v=3">
+<link rel="stylesheet" href="../style.css?v=11">
 </head>
 <body class="poem-page poem-page-reading">
-<header>
-  <a class="logo" href="../index.html">ПОЕЗІЯ ТА ЕСЕ</a>
+<header class="content-header">
+  <a class="logo" href="../index.html">Авторський простір | В. Роман-Римський</a>
   <button class="menu" aria-label="Меню">☰</button>
   <nav><a href="../poems.html">Усі вірші</a><a href="../index.html#about">Про автора</a><a href="../index.html#audio">Аудіо</a><a href="../index.html#contact">Контакти</a></nav>
 </header>
@@ -114,11 +114,11 @@ function archivePage(poems) {
 <title>Вірші В. Романа-Римського — сучасна українська поезія</title>
 <meta name="description" content="Усі опубліковані вірші В. Романа-Римського. Сучасна українська поезія про людину, суспільство, свободу і час.">
 <link rel="canonical" href="https://roman-roman.com/poems.html">
-<link rel="stylesheet" href="style.css?v=3">
+<link rel="stylesheet" href="style.css?v=11">
 </head>
 <body class="archive-page">
-<header>
-  <a class="logo" href="index.html">ПОЕЗІЯ ТА ЕСЕ</a>
+<header class="content-header">
+  <a class="logo" href="index.html">Авторський простір | В. Роман-Римський</a>
   <nav><a href="index.html#about">Про автора</a><a href="index.html#audio">Аудіо</a><a href="index.html#contact">Контакти</a></nav>
 </header>
 <main class="archive-shell">
