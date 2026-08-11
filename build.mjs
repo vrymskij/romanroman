@@ -74,9 +74,10 @@ function poemPage(p) {
 <link rel="stylesheet" href="../style.css?v=11">
 </head>
 <body class="poem-page poem-page-reading">
-<header class="content-header">
+<header>
+  <a class="logo" href="../index.html">ПОЕЗІЯ ТА ЕСЕ</a>
   <button class="menu" aria-label="Меню">☰</button>
-  <nav><a href="../poems.html">Усі вірші</a><a href="../index.html#about">Про автора</a><a href="../index.html#audio">Аудіо</a><a href="../index.html#contact">Контакти</a></nav>
+  <nav><a href="../index.html#about">Про автора</a><a href="../index.html#audio">Аудіо</a><a href="../index.html#contact">Контакти</a></nav>
 </header>
 
 <main class="poem-reading-shell">
@@ -116,7 +117,9 @@ function archivePage(poems) {
 <link rel="stylesheet" href="style.css?v=11">
 </head>
 <body class="archive-page">
-<header class="content-header">
+<header>
+  <a class="logo" href="index.html">ПОЕЗІЯ ТА ЕСЕ</a>
+  <button class="menu" aria-label="Меню">☰</button>
   <nav><a href="index.html#about">Про автора</a><a href="index.html#audio">Аудіо</a><a href="index.html#contact">Контакти</a></nav>
 </header>
 <main class="archive-shell">
@@ -126,7 +129,11 @@ function archivePage(poems) {
   <div class="poems archive-poems">${rows}</div>
 </main>
 <footer class="site-footer"><span>© <span id="year"></span> · Усі тексти та аудіоматеріали захищені авторським правом. Використання та публікація можливі лише з дозволу автора.</span><a href="index.html">На головну ↑</a></footer>
-<script>document.getElementById("year").textContent=new Date().getFullYear()</script>
+<script>
+document.getElementById("year").textContent=new Date().getFullYear();
+const menu=document.querySelector(".menu"),nav=document.querySelector("nav");
+if(menu&&nav) menu.addEventListener("click",()=>{nav.style.display=nav.style.display==="grid"?"none":"grid"});
+</script>
 </body></html>`;
 }
 
