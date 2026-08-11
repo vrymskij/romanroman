@@ -1593,3 +1593,72 @@ pre.poem-text {
   }
 }
 \n\n/* ===== Content pages: separated author identity from section navigation ===== */\n.archive-page > header.content-header,\n.poem-page-reading > header.content-header{\n  height:auto!important;\n  min-height:0!important;\n  padding:24px 5vw 22px!important;\n  display:grid!important;\n  grid-template-columns:1fr auto;\n  grid-template-areas:\n    "brand brand"\n    "nav menu";\n  align-items:center!important;\n  row-gap:18px!important;\n  column-gap:24px!important;\n}\n.archive-page > header.content-header .logo,\n.poem-page-reading > header.content-header .logo{\n  grid-area:brand;\n  justify-self:start;\n  width:max-content;\n  max-width:100%;\n  white-space:nowrap!important;\n}\n.archive-page > header.content-header nav,\n.poem-page-reading > header.content-header nav{\n  grid-area:nav;\n  justify-self:start!important;\n  justify-content:flex-start!important;\n  margin:0!important;\n}\n.poem-page-reading > header.content-header .menu{\n  grid-area:menu;\n}\n\n@media(max-width:760px){\n  .archive-page > header.content-header,\n  .poem-page-reading > header.content-header{\n    padding:18px 5vw 14px!important;\n    grid-template-columns:minmax(0,1fr) auto;\n    grid-template-areas:\n      "brand menu"\n      "nav nav";\n    row-gap:10px!important;\n  }\n  .archive-page > header.content-header .logo,\n  .poem-page-reading > header.content-header .logo{\n    font-size:clamp(11px,3.2vw,14px)!important;\n    letter-spacing:.02em!important;\n    white-space:nowrap!important;\n  }\n  .poem-page-reading > header.content-header nav{\n    top:100%!important;\n  }\n}\n
+
+/* ===== 2026-08-11 unified header navigation ===== */
+/* Keep the desktop navigation in exactly the same top-right position on
+   landing, archive and individual-poem pages. */
+header,
+.archive-page header,
+.poem-page-reading header{
+  height:70px;
+  padding:0 3.8vw;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:28px;
+}
+header .logo,
+.archive-page header .logo,
+.poem-page-reading header .logo{
+  flex:0 0 auto;
+}
+header nav,
+.archive-page header nav,
+.poem-page-reading header nav{
+  margin-left:auto;
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  gap:34px;
+  flex-wrap:nowrap;
+}
+header nav a,
+.archive-page header nav a,
+.poem-page-reading header nav a{white-space:nowrap}
+
+@media(max-width:760px){
+  header,
+  .archive-page header,
+  .poem-page-reading header{
+    height:64px;
+    padding:0 5vw;
+  }
+  header nav,
+  .archive-page header nav,
+  .poem-page-reading header nav{
+    display:none;
+    position:absolute;
+    top:64px;
+    left:0;
+    right:0;
+    margin-left:0;
+    padding:8px 5vw 14px;
+    background:rgba(240,237,229,.98);
+    border-top:1px solid rgba(23,23,20,.08);
+    border-bottom:1px solid rgba(23,23,20,.08);
+    grid-template-columns:1fr 1fr;
+    gap:0;
+    z-index:20;
+  }
+  header nav a,
+  .archive-page header nav a,
+  .poem-page-reading header nav a{
+    min-height:42px;
+    display:flex;
+    align-items:center;
+    font-size:17px;
+  }
+  header .menu,
+  .archive-page header .menu,
+  .poem-page-reading header .menu{display:block}
+}
