@@ -1574,3 +1574,21 @@ pre.poem-text {
   font-size:12px;
 }
 .like:disabled{cursor:default}
+
+
+/* ===== 2026-08-11 landing hero mobile overlap fix ===== */
+@media (max-width:760px){
+  /* Keep the CTA area clear of the mountain artwork. */
+  .template-hero{
+    min-height:800px;
+  }
+  .template-hero .hero-copy{
+    position:relative;
+    z-index:4;
+  }
+  .editorial-hero .hero-landscape img{
+    height:57%!important;
+    bottom:-8%!important;
+    opacity:.66!important;
+  }
+}
