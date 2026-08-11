@@ -1662,3 +1662,55 @@ header nav a,
   .archive-page header .menu,
   .poem-page-reading header .menu{display:block}
 }
+
+/* ===== 2026-08-11 final header-position correction ===== */
+/* Individual/archive pages have no left-hand identity, but their navigation
+   should occupy exactly the same right-hand position as the landing page. */
+@media (min-width:761px){
+  .archive-page > header,
+  .poem-page-reading > header{
+    height:70px!important;
+    padding:0 3.8vw!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:flex-end!important;
+  }
+  .archive-page > header nav,
+  .poem-page-reading > header nav{
+    position:static!important;
+    display:flex!important;
+    width:auto!important;
+    margin:0!important;
+    padding:0!important;
+    justify-content:flex-end!important;
+    gap:34px!important;
+    background:none!important;
+    border:0!important;
+  }
+}
+
+/* On every mobile page the burger occupies the same top-right position. */
+@media (max-width:760px){
+  header,
+  .archive-page > header,
+  .poem-page-reading > header{
+    height:64px!important;
+    padding:0 5vw!important;
+    display:flex!important;
+    align-items:center!important;
+  }
+  header .menu,
+  .archive-page > header .menu,
+  .poem-page-reading > header .menu{
+    display:block!important;
+    margin-left:auto!important;
+    margin-right:0!important;
+    position:static!important;
+    justify-self:auto!important;
+    align-self:center!important;
+  }
+  .archive-page > header nav,
+  .poem-page-reading > header nav{
+    top:64px!important;
+  }
+}

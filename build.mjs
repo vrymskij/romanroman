@@ -71,7 +71,7 @@ function poemPage(p) {
 <title>${esc(p.title)} — В. Роман-Римський | Українська поезія</title>
 <meta name="description" content="«${esc(p.title)}» — вірш В. Романа-Римського. Сучасна українська поезія.">
 <link rel="canonical" href="https://roman-roman.com/poems/${encodeURIComponent(p.slug)}.html">
-<link rel="stylesheet" href="../style.css?v=11">
+<link rel="stylesheet" href="../style.css?v=12">
 </head>
 <body class="poem-page poem-page-reading">
 <header>
@@ -113,7 +113,7 @@ function archivePage(poems) {
 <title>Вірші В. Романа-Римського — сучасна українська поезія</title>
 <meta name="description" content="Усі опубліковані вірші В. Романа-Римського. Сучасна українська поезія про людину, суспільство, свободу і час.">
 <link rel="canonical" href="https://roman-roman.com/poems.html">
-<link rel="stylesheet" href="style.css?v=11">
+<link rel="stylesheet" href="style.css?v=12">
 </head>
 <body class="archive-page">
 <header>
